@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { ArrowRight, Compass } from "lucide-react";
 import { LoginForm } from "@/components/portal/LoginForm";
 import { isOwner, portalConfigured } from "@/lib/server/auth";
+import { storageMode } from "@/lib/server/db";
 import { BRAND } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Sign in" };
@@ -21,7 +22,9 @@ export default async function Login() {
           <p className="mt-1 text-[var(--muted)]">Leads, quotes, jobs and your weekly Lead Sweep.</p>
         </div>
         <div className="cyc-frame">
-          {portalConfigured() ? (
+          {storageMode() === "none" ? (
+            <p className="text-white/85">The live portal turns on once a database is connected. For now, everything runs in the demo below.</p>
+          ) : portalConfigured() ? (
             <LoginForm />
           ) : (
             <p className="text-white/85">Sign-in isn&apos;t set up yet. Add <code>PORTAL_PASSWORD</code> and <code>PORTAL_SESSION_SECRET</code> to the site&apos;s environment.</p>

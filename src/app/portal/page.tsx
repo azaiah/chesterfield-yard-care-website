@@ -3,12 +3,15 @@ import { redirect } from "next/navigation";
 import { PortalApp } from "@/components/portal/PortalApp";
 import type { Tab } from "@/components/portal/context";
 import { isOwner } from "@/lib/server/auth";
+import { storageMode } from "@/lib/server/db";
 import { loadState, portalConfig } from "@/lib/server/portal";
 
 export const metadata: Metadata = { title: "Owner Portal" };
 export const dynamic = "force-dynamic";
 
 export default async function Portal({ searchParams }: { searchParams: Promise<Record<string, string | undefined>> }) {
+  // No database (mock-data deploy): the portal runs as the demo.
+  if (storageMode() === "none") redirect("/portal/demo");
   if (!(await isOwner())) redirect("/portal/login");
   const sp = await searchParams;
   const [state, config] = [await loadState(), portalConfig()];

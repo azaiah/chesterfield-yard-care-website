@@ -1,0 +1,12 @@
+# Netlify picks up Next.js automatically (OpenNext adapter). Webpack build is used for the
+# deploy because it's the most widely supported output; local dev can keep using Turbopack.
+[build]
+  command = "npx next build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[functions]
+  node_bundler = "esbuild"
