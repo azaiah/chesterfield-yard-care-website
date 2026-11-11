@@ -1,0 +1,306 @@
+{
+  "style_photo": "Bright Chesterfield County, Virginia suburban setting, crisp blue sky with soft white clouds, freshly striped deep-green fescue lawn, vivid flower beds and dark brown hardwood mulch, photoreal professional landscape photography, shot on full-frame 35mm, natural color, high detail, no people, no text, no logos, no watermark.",
+  "style_badge": "Premium glossy 3D app-icon style emblem, perfectly centered, circular badge with a deep navy (#07142B) center disc, thick polished electric-blue (#2F7BFF) metallic outer ring with a soft blue glow, inside it a bold friendly illustrated icon in lime green (#8DC63F), white and dark forest green (#0F3B1C), soft studio lighting, subtle bevel, isolated on a perfectly flat solid pure white (#FFFFFF) background, no shadow on the background, no text, no letters, no numbers.",
+  "style_illo": "Soft 3D clay illustration style, rounded friendly shapes, brand palette of lime green #8DC63F, deep forest green #0F3B1C, royal blue #1D4ED8, navy #07142B and warm cream, gentle studio lighting, isolated on a perfectly flat solid pure white (#FFFFFF) background, no text, no letters, no logos.",
+  "images": [
+    {
+      "id": "hero-still",
+      "style": "photo",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "One single continuous photograph, no collage, no split panels. Wide low-angle view across a perfectly striped front lawn toward a classic red-brick two-story colonial home with white trim and black shutters, placed on the right side of the frame. Curved crisp-edged mulch beds, a red Japanese maple, purple lavender, ornamental grasses and boxwoods. The left side of the frame is open striped lawn and soft blue sky with a few clouds, continuous with the scene. Late-afternoon golden-hour light raking across the mowing stripes."
+    },
+    {
+      "id": "hero-mobile",
+      "style": "photo",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "prompt": "Vertical composition, low ground-level view down crisp diagonal mowing stripes leading to a brick colonial home in the distance, vivid flower bed in the foreground corner, golden-hour light, open blue sky in the top third for text."
+    },
+    {
+      "id": "leaf-season",
+      "style": "photo",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "Autumn front yard of a Virginia brick home mid leaf cleanup: the left half of the lawn is covered in orange, red and yellow fallen leaves, the right half is perfectly clean striped green grass, neat leaf piles lined at the curb ready for removal, a rake and leaf blower leaning against a tree, red maples and golden oaks in peak fall color, clear blue sky. Clear visible before-and-after contrast across the lawn."
+    },
+    {
+      "id": "svc-mowing",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "2K",
+      "prompt": "Close, low-angle shot of perfect light-and-dark diagonal mowing stripes on a lush lawn, a fine mist of fresh grass clippings catching backlight, crisp edged border along a concrete walkway, morning sun."
+    },
+    {
+      "id": "svc-mulch-gravel",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "2K",
+      "prompt": "Freshly installed rich dark brown hardwood mulch beds with clean spade-cut edges curving around azaleas, hostas and boxwoods, transitioning to a neat border of smooth grey river rock and pea gravel along a home foundation, lawn in front."
+    },
+    {
+      "id": "svc-leaf-cleanup",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "2K",
+      "prompt": "Large tidy pile of orange and red autumn leaves gathered on a tarp at the edge of a freshly cleared green lawn, crisp fall afternoon light, colorful maple trees in the background, suburban Virginia street."
+    },
+    {
+      "id": "svc-tree-work",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "2K",
+      "prompt": "Freshly pruned crape myrtles and a shaped ornamental tree in a front yard, cut limbs and branches stacked neatly in a bundle by the curb, sawdust on the grass, bright clear day, tidy professional result."
+    },
+    {
+      "id": "svc-aeration",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "2K",
+      "prompt": "Ground-level close-up of a healthy green fescue lawn right after core aeration: many separate small individual soil cores, each about thumb-sized (2 to 3 inches long), lying scattered randomly on top of the grass, with matching small holes visible in the turf, a light sprinkle of fresh grass seed, shallow depth of field, soft morning light, dew."
+    },
+    {
+      "id": "svc-junk-removal",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "2K",
+      "prompt": "Unbranded black utility trailer neatly loaded with yard debris, old fence boards, branches and bagged leaves, parked on a clean swept driveway of a suburban home, clean lawn, bright day. The trailer and vehicles have no logos or writing."
+    },
+    {
+      "id": "svc-makeover",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "2K",
+      "prompt": "Wide shot of a completely finished full-property yard makeover: striped lawn, fresh mulch beds, river rock border, trimmed shrubs, blooming flowers along the walkway, pruned trees, of a cozy suburban Virginia home, golden hour."
+    },
+    {
+      "id": "cta-dusk",
+      "style": "photo",
+      "aspect_ratio": "21:9",
+      "resolution": "2K",
+      "prompt": "Ultra-wide cinematic shot of a manicured striped lawn at blue-hour dusk, deep electric-blue sky glow on the horizon fading to navy, soft warm porch lights from a distant home, landscape lighting glowing in flower beds, calm and premium. Large dark empty sky area for text."
+    },
+    {
+      "id": "season-spring",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "1K",
+      "prompt": "Spring in a Virginia front yard: dogwoods and azaleas in bloom, fresh dark mulch, bright new green lawn, tulips along the walk."
+    },
+    {
+      "id": "season-summer",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "1K",
+      "prompt": "High summer in a Virginia backyard: deep green striped lawn, crape myrtles blooming pink, hydrangeas, bright sun, a patio edge."
+    },
+    {
+      "id": "season-fall",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "1K",
+      "prompt": "Peak fall color over a Virginia front yard, red and orange maples, a few leaves drifting onto a clean green lawn, pumpkins on the porch steps."
+    },
+    {
+      "id": "season-winter",
+      "style": "photo",
+      "aspect_ratio": "4:3",
+      "resolution": "1K",
+      "prompt": "Crisp clear winter day in a Virginia yard: tidy dormant lawn, neatly pruned bare trees, evergreen boxwoods and hollies, clean beds, light frost on the grass."
+    },
+    {
+      "id": "og-base",
+      "style": "photo",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "Wide shot of a perfectly striped lawn with a vivid flower bed on the right and a red Japanese maple, blue sky with soft clouds, large uncluttered lawn and sky area on the left half for a logo."
+    },
+    {
+      "id": "texture-grass",
+      "style": "raw",
+      "aspect_ratio": "1:1",
+      "resolution": "2K",
+      "prompt": "Seamless tileable top-down texture of a freshly mowed lawn with subtle alternating diagonal light and dark mowing stripes, even lighting, no shadows, no objects, flat uniform repeating pattern, photoreal."
+    },
+    {
+      "id": "texture-mulch",
+      "style": "raw",
+      "aspect_ratio": "1:1",
+      "resolution": "2K",
+      "prompt": "Seamless tileable top-down texture of rich dark brown shredded hardwood mulch, even soft lighting, no shadows, no objects, flat uniform repeating pattern, photoreal."
+    },
+    {
+      "id": "texture-gravel",
+      "style": "raw",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Seamless tileable top-down texture of smooth grey and tan river rock pebbles, even soft lighting, flat uniform repeating pattern, photoreal."
+    },
+    {
+      "id": "texture-topo",
+      "style": "raw",
+      "aspect_ratio": "1:1",
+      "resolution": "2K",
+      "prompt": "Seamless tileable subtle topographic contour line pattern, thin glowing electric blue (#2F7BFF) lines at low opacity on a deep navy (#07142B) background, minimal, elegant, flat, no text, no labels."
+    },
+    {
+      "id": "texture-leaves",
+      "style": "raw",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Seamless tileable top-down texture of scattered colorful autumn maple and oak leaves on green grass, even lighting, flat repeating pattern, photoreal."
+    },
+    {
+      "id": "badge-mowing",
+      "style": "badge",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Icon: a white push lawn mower on a small tuft of bright green grass."
+    },
+    {
+      "id": "badge-mulch-gravel",
+      "style": "badge",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Icon: two small mounds side by side, one of brown wood mulch and one of grey gravel stones."
+    },
+    {
+      "id": "badge-leaf-cleanup",
+      "style": "badge",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Icon: two glossy bright lime-green leaves with a small swoosh of motion."
+    },
+    {
+      "id": "badge-tree-work",
+      "style": "badge",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Icon: a rounded leafy green tree with a brown trunk."
+    },
+    {
+      "id": "badge-aeration",
+      "style": "badge",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Icon: a white lawn aerator machine above a strip of green turf with small soil core plugs below."
+    },
+    {
+      "id": "badge-junk-removal",
+      "style": "badge",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Icon: a white utility trailer loaded with boxes and branches."
+    },
+    {
+      "id": "badge-anything",
+      "style": "badge",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Icon: a big bold electric-blue and white check mark."
+    },
+    {
+      "id": "illo-text-photo",
+      "style": "illo",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "A smartphone tilted toward the viewer showing a photo of a green lawn on its screen, a lime-green chat bubble popping out, a small sparkle."
+    },
+    {
+      "id": "illo-quote",
+      "style": "illo",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "A clipboard with a checklist and a green check mark, a small calculator and a leaf beside it."
+    },
+    {
+      "id": "illo-done",
+      "style": "illo",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "A tiny lime-green and black zero-turn riding mower on a small round patch of perfectly striped lawn with a small tree and flower bed, like a miniature diorama."
+    },
+    {
+      "id": "illo-calendar",
+      "style": "illo",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "A desk calendar with four season icons on it (blossom, sun, maple leaf, snowflake) and a small green check mark."
+    },
+    {
+      "id": "illo-map-pin",
+      "style": "illo",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "A royal-blue map pin standing on a small round island of green striped lawn with tiny trees and a tiny house."
+    },
+    {
+      "id": "illo-leaf-pile",
+      "style": "illo",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "A cheerful pile of orange, red and yellow autumn leaves with a rake leaning on it."
+    },
+    {
+      "id": "btn-skin-lime",
+      "style": "raw",
+      "aspect_ratio": "21:9",
+      "resolution": "1K",
+      "prompt": "A single wide horizontal pill-shaped glossy 3D button with no text, lime green (#8DC63F) with a subtle fine grass-blade texture inside, soft top highlight, gentle inner glow, rounded ends, centered on a perfectly flat solid pure white (#FFFFFF) background, UI game-style button, no text, no icons."
+    },
+    {
+      "id": "btn-skin-blue",
+      "style": "raw",
+      "aspect_ratio": "21:9",
+      "resolution": "1K",
+      "prompt": "A single wide horizontal pill-shaped glossy 3D button with no text, deep royal blue (#1D4ED8) center with a bright electric blue (#2F7BFF) glowing rim, glass-like top highlight, rounded ends, centered on a perfectly flat solid pure white (#FFFFFF) background, UI button, no text, no icons."
+    },
+    {
+      "id": "frame-electric",
+      "style": "raw",
+      "aspect_ratio": "4:3",
+      "resolution": "2K",
+      "prompt": "An empty rounded-rectangle panel frame, thick glossy electric-blue (#2F7BFF) beveled border with a soft blue outer glow, the inside of the frame is plain deep navy (#07142B), centered on a perfectly flat solid pure white (#FFFFFF) background, premium sports-badge style, no text."
+    },
+    {
+      "id": "leaf-sprite-maple",
+      "style": "raw",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "A single vivid orange-red maple leaf, photoreal, slightly curled, isolated on a perfectly flat solid pure white (#FFFFFF) background, no shadow."
+    },
+    {
+      "id": "leaf-sprite-oak",
+      "style": "raw",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "A single golden-yellow oak leaf, photoreal, slightly curled, isolated on a perfectly flat solid pure white (#FFFFFF) background, no shadow."
+    },
+    {
+      "id": "leaf-sprite-green",
+      "style": "raw",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "A single fresh lime-green leaf, photoreal, isolated on a perfectly flat solid pure white (#FFFFFF) background, no shadow."
+    },
+    {
+      "id": "hero-still-b",
+      "style": "photo",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "One single continuous photograph, no collage, no split panels. Eye-level wide shot of a manicured suburban Virginia front yard in late afternoon golden light: bold diagonal mowing stripes running from the bottom left toward a cream-and-brick traditional home on the right, sweeping mulch bed with red Japanese maple, lavender and ornamental grasses, mature oaks behind, clear blue sky. The left 40 percent of the frame is calm lawn and sky."
+    }
+  ],
+  "videos": [
+    {
+      "id": "hero-loop",
+      "aspect_ratio": "16:9",
+      "prompt": "Slow, smooth cinematic dolly shot gliding low along fresh diagonal mowing stripes on a lush green lawn toward a manicured front yard of a red-brick colonial home with curved mulch beds and a red Japanese maple, ornamental grasses swaying gently in a light breeze, a few leaves drifting, warm golden-hour sunlight, calm and premium. No people, no text, no logos. Camera motion is slow and steady, suitable for a seamless background loop."
+    },
+    {
+      "id": "leaf-loop",
+      "aspect_ratio": "16:9",
+      "prompt": "Slow-motion close shot of colorful autumn maple leaves gently falling onto a clean green striped lawn in soft afternoon light, shallow depth of field, calm, no people, no text."
+    }
+  ]
+}

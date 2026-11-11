@@ -1,0 +1,112 @@
+/* Chesterfield Yard Care — custom UI kit. Drop into app/globals.css (Tailwind v4 friendly).
+   Asset paths assume the kit is copied to /public/media/brand/... (see ASSET_KIT.md). */
+:root {
+  --forest-950:#06210F; --forest-800:#0F3B1C; --lime-500:#8DC63F; --lime-300:#B8E06A;
+  --royal-600:#1D4ED8; --electric-500:#2F7BFF; --navy-950:#07142B; --navy-900:#0B1D3D;
+  --sky-300:#8CC8F5; --sun-400:#F5E21A; --mulch-700:#5B3A1E; --cream-50:#F7F8F2;
+  --radius-xl:28px; --radius-pill:999px;
+  --glow-electric:0 0 0 1px rgba(47,123,255,.55), 0 0 24px rgba(47,123,255,.45), 0 0 64px rgba(47,123,255,.18);
+  --glow-lime:0 10px 30px -8px rgba(141,198,63,.65);
+  --font-collegiate:"Graduate", ui-serif, serif;
+  --font-head:"Barlow Condensed", system-ui, sans-serif;
+  --font-accent:"Instrument Serif", ui-serif, serif;
+  --font-body:"Inter", system-ui, sans-serif;
+}
+
+/* ---------- Buttons ---------- */
+.cyc-btn{--h:56px;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  height:var(--h);padding:0 1.6rem;border-radius:var(--radius-pill);border:0;cursor:pointer;
+  font:800 1.15rem/1 var(--font-head);letter-spacing:.04em;text-transform:uppercase;text-decoration:none;
+  transition:transform .18s ease, box-shadow .25s ease, filter .25s ease;isolation:isolate;overflow:hidden}
+.cyc-btn svg{width:1.25em;height:1.25em;flex:none}
+.cyc-btn:active{transform:translateY(1px) scale(.99)}
+.cyc-btn:focus-visible{outline:3px solid var(--electric-500);outline-offset:3px}
+
+/* Lime "grass" primary — uses the Kie-generated button skin + mowing-stripe sheen */
+.cyc-btn--lime{color:var(--forest-950);
+  background:url(/media/brand/ui/btn-skin-lime.webp) center/100% 100% no-repeat, linear-gradient(180deg,#A6D85A,#7DB534);
+  box-shadow:var(--glow-lime), inset 0 -3px 0 rgba(6,33,15,.25)}
+.cyc-btn--lime::after{content:"";position:absolute;inset:0;z-index:-1;opacity:0;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.18) 0 14px,transparent 14px 28px);
+  transition:opacity .25s, transform .6s}
+.cyc-btn--lime:hover{transform:translateY(-2px);filter:saturate(1.1)}
+.cyc-btn--lime:hover::after{opacity:1;transform:translateX(28px)}
+
+/* Electric-blue secondary — flyer frame glow */
+.cyc-btn--electric{color:#fff;
+  background:url(/media/brand/ui/btn-skin-blue.webp) center/100% 100% no-repeat, linear-gradient(180deg,#2F6BF0,#1A3FB8);
+  box-shadow:var(--glow-electric)}
+.cyc-btn--electric:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(111,168,255,.8),0 0 34px rgba(47,123,255,.7)}
+
+/* Ghost for dark sections */
+.cyc-btn--ghost{color:#fff;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35);backdrop-filter:blur(8px)}
+.cyc-btn--ghost:hover{box-shadow:inset 0 0 0 1.5px var(--lime-500);color:var(--lime-300)}
+
+/* Phone pill: big number, call + text halves */
+.cyc-phone{display:inline-flex;border-radius:var(--radius-pill);overflow:hidden;box-shadow:var(--glow-electric);background:var(--navy-950)}
+.cyc-phone a{display:flex;align-items:center;gap:.5rem;padding:.8rem 1.2rem;color:#fff;text-decoration:none;font:800 1.35rem/1 var(--font-head);letter-spacing:.03em}
+.cyc-phone a + a{background:var(--lime-500);color:var(--forest-950);font-size:1rem}
+.cyc-phone a:hover{filter:brightness(1.12)}
+
+/* ---------- Electric frame panel (quote card, featured cards) ---------- */
+.cyc-frame{position:relative;border-radius:var(--radius-xl);padding:clamp(1.25rem,3vw,2rem);
+  background:linear-gradient(180deg,rgba(11,29,61,.92),rgba(7,20,43,.96)) padding-box,
+             linear-gradient(140deg,#6FA8FF,var(--electric-500) 40%,var(--royal-600) 70%,#6FA8FF) border-box;
+  border:3px solid transparent;box-shadow:var(--glow-electric);color:#fff}
+.cyc-frame--light{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(140deg,#6FA8FF,var(--electric-500),var(--royal-600)) border-box;color:var(--forest-950)}
+
+/* ---------- Service badge (Kie 3D badges) ---------- */
+.cyc-badge{display:grid;justify-items:center;gap:.6rem;text-align:center;text-decoration:none;color:inherit}
+.cyc-badge img{width:clamp(72px,9vw,112px);aspect-ratio:1;transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s}
+.cyc-badge span{font:800 .95rem/1.1 var(--font-head);letter-spacing:.06em;text-transform:uppercase}
+.cyc-badge:hover img{transform:translateY(-6px) rotate(-6deg) scale(1.06);filter:drop-shadow(0 0 18px rgba(47,123,255,.75))}
+
+/* ---------- Feature card (service bento) ---------- */
+.cyc-feature{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:320px;
+  border-radius:var(--radius-xl);overflow:hidden;color:#fff;text-decoration:none;isolation:isolate}
+.cyc-feature > img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s ease}
+.cyc-feature::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 30%,rgba(6,33,15,.92))}
+.cyc-feature .icon{position:absolute;top:1rem;left:1rem;width:64px}
+.cyc-feature .body{padding:1.4rem}
+.cyc-feature h3{font:800 1.8rem/1 var(--font-head);text-transform:uppercase;margin:0 0 .35rem}
+.cyc-feature p{margin:0;opacity:.88;font:400 .98rem/1.45 var(--font-body)}
+.cyc-feature .cta{margin-top:.9rem;display:inline-flex;gap:.4rem;color:var(--lime-300);font:700 .9rem var(--font-head);letter-spacing:.08em;text-transform:uppercase}
+.cyc-feature:hover > img.bg{transform:scale(1.06)}
+.cyc-feature:hover{box-shadow:var(--glow-electric)}
+
+/* ---------- Step card (How it works, uses clay illustrations) ---------- */
+.cyc-step{display:grid;gap:.75rem;padding:1.5rem;border-radius:var(--radius-xl);background:#fff;
+  box-shadow:0 1px 0 rgba(6,33,15,.06),0 20px 40px -24px rgba(6,33,15,.35)}
+.cyc-step img{width:120px;height:120px;object-fit:contain}
+.cyc-step .n{font:400 .95rem var(--font-collegiate);color:var(--royal-600)}
+.cyc-step h3{font:800 1.5rem/1.05 var(--font-head);text-transform:uppercase;color:var(--forest-800);margin:0}
+
+/* ---------- Section backgrounds ---------- */
+.cyc-stripes{background:repeating-linear-gradient(-35deg,#0E3A1B 0 56px,#0B3016 56px 112px);animation:cyc-mow 40s linear infinite}
+.cyc-stripes--photo{background:url(/media/brand/textures/texture-grass.webp) 0 0/512px 512px}
+.cyc-topo{background:var(--navy-950) url(/media/brand/textures/texture-topo.webp) 0 0/640px 640px}
+.cyc-mulch{background:url(/media/brand/textures/texture-mulch.webp) 0 0/420px 420px}
+@keyframes cyc-mow{to{background-position:158px 0}}
+
+/* ---------- Sticky mobile action bar ---------- */
+.cyc-actionbar{position:fixed;inset:auto 10px max(10px,env(safe-area-inset-bottom)) 10px;z-index:60;display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:6px;
+  padding:6px;border-radius:22px;background:rgba(7,20,43,.92);backdrop-filter:blur(12px);box-shadow:var(--glow-electric)}
+.cyc-actionbar a{display:grid;place-items:center;gap:2px;padding:.55rem 0;border-radius:16px;color:#fff;text-decoration:none;font:800 .8rem var(--font-head);letter-spacing:.06em;text-transform:uppercase}
+.cyc-actionbar a:last-child{background:var(--lime-500);color:var(--forest-950)}
+@media (min-width:900px){.cyc-actionbar{display:none}}
+
+/* ---------- Seasonal falling leaves (uses leaf sprites) ---------- */
+.cyc-leaves{pointer-events:none;position:absolute;inset:0;overflow:hidden}
+.cyc-leaves i{position:absolute;top:-60px;width:34px;height:34px;background:center/contain no-repeat;animation:cyc-fall linear infinite}
+.cyc-leaves i:nth-child(3n){background-image:url(/media/brand/ui/leaf-sprite-maple.webp)}
+.cyc-leaves i:nth-child(3n+1){background-image:url(/media/brand/ui/leaf-sprite-oak.webp)}
+.cyc-leaves i:nth-child(3n+2){background-image:url(/media/brand/ui/leaf-sprite-maple.webp);width:26px;height:26px}
+@keyframes cyc-fall{0%{transform:translate3d(0,0,0) rotate(0)}100%{transform:translate3d(-80px,110vh,0) rotate(540deg)}}
+
+/* ---------- Before/after slider handle ---------- */
+.cyc-ba{position:relative;overflow:hidden;border-radius:var(--radius-xl)}
+.cyc-ba .handle{position:absolute;top:0;bottom:0;width:4px;background:var(--lime-500);box-shadow:0 0 20px rgba(141,198,63,.8)}
+.cyc-ba .handle::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;translate:-50% -50%;border-radius:50%;
+  background:var(--navy-950) url(/media/brand/logo/icon-192.png) center/70% no-repeat;box-shadow:var(--glow-electric)}
+
+@media (prefers-reduced-motion:reduce){.cyc-stripes{animation:none}.cyc-leaves{display:none}.cyc-btn,.cyc-badge img,.cyc-feature > img.bg{transition:none}}

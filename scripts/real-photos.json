@@ -1,0 +1,27 @@
+{
+  "note": "Real, freely licensed photos of Chesterfield County / Midlothian, VA from Wikimedia Commons. CC0 = no attribution required (still nice to credit). CC BY / CC BY-SA = MUST show credit + license link (put it in /credits and as a small caption). CC BY-SA 3.0: if you edit/crop the image, the edited version is shared under the same license. These are NOT Chesterfield Yard Care's work — use them for town pages, the service-area section and the About story, never in the 'Our Work' gallery.",
+  "photos": [
+    {"slug": "swift-creek-reservoir", "file": "Swift Creek Reservoir.jpg", "license": "CC0", "artist": "Packer1028", "use": "Brandermill / Woodlake / Midlothian town pages; service-area hero"},
+    {"slug": "swift-creek-reservoir-dam", "file": "Swift Creek Reservoir Dam.jpg", "license": "CC0", "artist": "Packer1028", "use": "Brandermill / Swift Creek pages"},
+    {"slug": "woodlake-sign", "file": "Woodlake, Virginia.jpg", "license": "CC0", "artist": "Packer1028", "use": "Woodlake town page hero"},
+    {"slug": "pocahontas-fall-trail", "file": "Pocahontas State Park, VA.jpg", "license": "CC BY 2.0", "artist": "BenGrantham", "use": "Fall / leaf-season section, Chesterfield 'about our home' strip"},
+    {"slug": "pocahontas-beaver-lake", "file": "PO 10-31-24 Beaver Lake.jpg", "license": "CC BY 2.0", "artist": "vastateparksstaff (Haley Rodgers, DCR-PCMO)", "use": "Leaf season / fall module background"},
+    {"slug": "pocahontas-beaver-lake-loop", "file": "PO 10-31-24 Beaver Lake Loop trail.jpg", "license": "CC BY 2.0", "artist": "vastateparksstaff (Haley Rodgers, DCR-PCMO)", "use": "Chesterfield Court House / Matoaca pages"},
+    {"slug": "pocahontas-picnic-fall", "file": "PO 10-31-24 picnic tables by Visitor Center.jpg", "license": "CC BY 2.0", "artist": "vastateparksstaff (Haley Rodgers, DCR-PCMO)", "use": "Fall leaf cleanup service page accent"},
+    {"slug": "pocahontas-beaver-lake-bench", "file": "PO 10-31-24 Beaver Lake - 54110748124.jpg", "license": "CC BY 2.0", "artist": "vastateparksstaff (Haley Rodgers, DCR-PCMO)", "use": "About page / service-area strip"},
+    {"slug": "pocahontas-spillway-bottom", "file": "PO 10-28-24 Beaver Lake Spillway- view from the bottom.jpg", "license": "CC BY 2.0", "artist": "vastateparksstaff (Haley Rodgers, DCR-PCMO)", "use": "Service-area strip"},
+    {"slug": "pocahontas-beaver-lake-beach", "file": "PO 10-21-24 Beaver Lake Beach.jpg", "license": "CC BY 2.0", "artist": "vastateparksstaff (Haley Rodgers, DCR-PCMO)", "use": "Service-area strip"},
+    {"slug": "pocahontas-spillway", "file": "PO 10-15-24 Beaver Lake Spillway view from the bottom.jpg", "license": "CC BY 2.0", "artist": "vastateparksstaff (Haley Rodgers, DCR-PCMO)", "use": "Chesterfield Court House page"},
+    {"slug": "chesterfield-historic-courthouse", "file": "Chesterfield Historic Courthouse.jpg", "license": "CC BY-SA 3.0", "artist": "James Shelton32", "use": "Chesterfield Court House town page hero"},
+    {"slug": "smoketree-entrance", "file": "Smoketree entrance, Courthouse Road.jpg", "license": "CC0", "artist": "Packer1028", "use": "North Chesterfield / Midlothian page — landscaped neighborhood entrance"},
+    {"slug": "robious-landing-james-river", "file": "James River at Robious Landing Park, vertically-rotated - February 2025.jpg", "license": "CC BY 4.0", "artist": "Zyzzybalubah", "use": "Midlothian page accent (artistic reflection shot)"},
+    {"slug": "midlothian-mines-dam", "file": "Dam at Mid-Lothian Mines Park.jpg", "license": "CC0", "artist": "Packer1028", "use": "Midlothian town page"},
+    {"slug": "midlothian-mines-park", "file": "Mid-Lothian Mines Park.jpg", "license": "CC0", "artist": "Packer1028", "use": "Midlothian town page / About 'our backyard'"},
+    {"slug": "buford-oaks", "file": "Buford Oaks.jpg", "license": "CC0", "artist": "Packer1028", "use": "Bon Air / North Chesterfield page"},
+    {"slug": "spring-grove", "file": "Spring Grove (Chesterfield County, Virginia).jpg", "license": "CC0", "artist": "Packer1028", "use": "Town page — landscaped entrance bed"},
+    {"slug": "tarrington", "file": "Tarrington suburb Virginia.jpg", "license": "CC0", "artist": "Packer1028", "use": "Midlothian page — fall color at a neighborhood entrance"},
+    {"slug": "ramsgate-entrance", "file": "Ramsgate neighborhood entrance, Virginia.jpg", "license": "CC0", "artist": "Packer1028", "use": "Town page — mulch bed + split rail entrance (HOA pitch visual)"},
+    {"slug": "patromdale", "file": "Patromdale neighborhood.jpg", "license": "CC0", "artist": "Packer1028", "use": "Town page"},
+    {"slug": "saint-james-woods", "file": "Saint James Woods neighborhood, Chesterfield County.jpg", "license": "CC0", "artist": "Packer1028", "use": "Town page / HOA section"}
+  ]
+}

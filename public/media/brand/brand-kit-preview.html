@@ -1,0 +1,387 @@
+<title>Chesterfield Yard Care Brand Kit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Graduate&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: the kit shown in use — a live site preview first, then the parts laid out like a spec sheet. */
+:root{
+  --forest-950:#06210F; --forest-800:#0F3B1C; --lime:#8DC63F; --lime-300:#B8E06A;
+  --royal:#1D4ED8; --electric:#2F7BFF; --navy:#07142B; --navy-2:#0D2147; --sky:#8CC8F5;
+  --sun:#F5E21A;
+  --bg:#F3F5EE; --surface:#FFFFFF; --fg:#0F2417; --muted:#4D5E52; --line:#DCE3D6; --chip:#E8EFE1;
+  --f-col:"Graduate", Georgia, serif; --f-head:"Barlow Condensed", "Arial Narrow", sans-serif;
+  --f-acc:"Instrument Serif", Georgia, serif; --f-body:"Inter", system-ui, sans-serif;
+  --glow:0 0 0 1px rgba(47,123,255,.55), 0 0 26px rgba(47,123,255,.42);
+  --r:22px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#081326;--surface:#0E1D38;--fg:#EAF1E6;--muted:#A7B6C7;--line:#1E3256;--chip:#132a4f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#081326;--surface:#0E1D38;--fg:#EAF1E6;--muted:#A7B6C7;--line:#1E3256;--chip:#132a4f;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.55 var(--f-body)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance}
+.eyebrow{font:700 .78rem/1 var(--f-head);letter-spacing:.18em;text-transform:uppercase;color:var(--royal)}
+:root[data-theme="dark"] .eyebrow{color:var(--sky)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .eyebrow{color:var(--sky)}}
+h2{font:800 clamp(2rem,4.4vw,3.1rem)/.95 var(--f-head);text-transform:uppercase;margin:.4rem 0 .6rem;letter-spacing:.01em}
+h2 em{font:italic 400 1.05em/1 var(--f-acc);text-transform:none;color:var(--lime)}
+.lede{color:var(--muted);max-width:62ch;margin:0}
+section{padding-block:clamp(56px,8vw,96px)}
+.sechead{display:grid;gap:.2rem;margin-bottom:2rem}
+
+/* ---------- Hero (site preview) ---------- */
+.hero{position:relative;isolation:isolate;color:#fff;overflow:hidden;background:var(--navy)}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,33,15,.86) 0%,rgba(6,33,15,.55) 45%,rgba(6,33,15,.05) 80%),linear-gradient(0deg,rgba(7,20,43,.6),transparent 40%)}
+.bar{background:var(--forest-950);color:#fff;font:600 .9rem var(--f-body);text-align:center;padding-block:.55rem}
+.bar b{color:var(--sun);font-weight:600}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:18px}
+.nav img{height:58px;width:auto}
+.nav .links{display:flex;gap:1.4rem;font:700 .95rem var(--f-head);letter-spacing:.08em;text-transform:uppercase}
+.nav .links span{opacity:.85}
+.hero-grid{display:grid;grid-template-columns:1.2fr .9fr;gap:2.5rem;align-items:center;padding-block:40px 70px}
+.hero h1{font:800 clamp(2.8rem,6.6vw,5.4rem)/.9 var(--f-head);text-transform:uppercase;margin:.6rem 0 1rem;letter-spacing:.005em}
+.hero h1 em{font:italic 400 1.02em/1 var(--f-acc);text-transform:none;color:var(--lime-300)}
+.hero p{font-size:1.12rem;max-width:44ch;color:#E6EEE3;margin:0 0 1.6rem}
+.hero .eyebrow{color:var(--lime-300)}
+.ctas{display:flex;flex-wrap:wrap;gap:.8rem}
+.trust{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.trust span{font:600 .82rem var(--f-body);padding:.35rem .7rem;border-radius:999px;background:rgba(255,255,255,.1);border:1px dashed rgba(255,255,255,.35)}
+
+/* Buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;height:56px;padding:0 1.6rem;border-radius:999px;border:0;cursor:pointer;
+  font:800 1.12rem/1 var(--f-head);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;overflow:hidden;isolation:isolate;transition:transform .18s ease,box-shadow .25s ease}
+.btn svg{width:20px;height:20px}
+.btn:focus-visible{outline:3px solid var(--electric);outline-offset:3px}
+.btn-lime{color:var(--forest-950);background:url(ui/btn-skin-lime.webp) center/100% 100% no-repeat,linear-gradient(#A6D85A,#7DB534);box-shadow:0 10px 30px -8px rgba(141,198,63,.7)}
+.btn-lime::after{content:"";position:absolute;inset:0;z-index:-1;opacity:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.22) 0 14px,transparent 14px 28px);transition:opacity .25s,transform .6s}
+.btn-lime:hover{transform:translateY(-2px)} .btn-lime:hover::after{opacity:1;transform:translateX(28px)}
+.btn-blue{color:#fff;background:url(ui/btn-skin-blue.webp) center/100% 100% no-repeat,linear-gradient(#2F6BF0,#1A3FB8);box-shadow:var(--glow)}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 0 0 1px #6FA8FF,0 0 36px rgba(47,123,255,.7)}
+.btn-ghost{color:#fff;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--lime);color:var(--lime-300)}
+.phone{display:inline-flex;border-radius:999px;overflow:hidden;box-shadow:var(--glow);background:var(--navy)}
+.phone span{display:flex;align-items:center;padding:.8rem 1.2rem;color:#fff;font:800 1.4rem/1 var(--f-head);letter-spacing:.04em;user-select:all}
+.phone span+span{background:var(--lime);color:var(--forest-950);font-size:1rem;user-select:none}
+
+/* Quote card = electric frame */
+.frame{border-radius:26px;padding:clamp(1.25rem,3vw,1.9rem);color:#fff;border:3px solid transparent;
+  background:linear-gradient(180deg,rgba(13,33,71,.94),rgba(7,20,43,.97)) padding-box,linear-gradient(140deg,#6FA8FF,var(--electric) 40%,var(--royal) 70%,#6FA8FF) border-box;box-shadow:var(--glow)}
+.frame h3{font:800 1.9rem/1 var(--f-head);text-transform:uppercase;margin:0 0 .3rem}
+.frame p{margin:0 0 1rem;color:#C9D6EA;font-size:.95rem}
+.frame form{display:grid;gap:.7rem}
+.frame label{display:grid;gap:.3rem;font:600 .8rem var(--f-body);color:#C9D6EA}
+.frame input{height:48px;border-radius:12px;border:1px solid #2B4677;background:#0A1934;color:#fff;padding:0 .9rem;font:500 1rem var(--f-body)}
+.frame input:focus{outline:2px solid var(--lime);border-color:transparent}
+.frame .btn{width:100%;margin-top:.3rem}
+.frame small{display:block;margin-top:.7rem;color:#9FB2CF;text-align:center}
+.frame .done{font:700 1rem var(--f-body);color:var(--lime-300);text-align:center;margin:.4rem 0 0}
+
+/* Badges strip */
+.badges{background:var(--navy);color:#fff}
+.badges ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:1rem}
+.badges li{display:grid;justify-items:center;gap:.6rem;text-align:center}
+.badges img{width:min(110px,100%);aspect-ratio:1;transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s}
+.badges li:hover img{transform:translateY(-6px) rotate(-6deg) scale(1.06);filter:drop-shadow(0 0 18px rgba(47,123,255,.8))}
+.badges span{font:800 .92rem/1.1 var(--f-head);letter-spacing:.06em;text-transform:uppercase}
+.badges.wrap-section{padding-block:44px}
+
+/* Feature bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.feat{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:300px;border-radius:var(--r);overflow:hidden;color:#fff;isolation:isolate}
+.feat:nth-child(1){grid-column:span 4;min-height:380px}.feat:nth-child(2){grid-column:span 2;min-height:380px}
+.feat:nth-child(3),.feat:nth-child(4),.feat:nth-child(5){grid-column:span 2}
+.feat:nth-child(6){grid-column:span 3}.feat:nth-child(7){grid-column:span 3}
+.feat>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s ease}
+.feat::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 35%,rgba(6,33,15,.92))}
+.feat .ic{position:absolute;top:14px;left:14px;width:60px}
+.feat .body{padding:1.3rem}
+.feat h3{font:800 1.7rem/1 var(--f-head);text-transform:uppercase;margin:0 0 .3rem}
+.feat p{margin:0;color:#E2ECDE;font-size:.95rem;max-width:40ch}
+.feat .cta{display:inline-block;margin-top:.7rem;color:var(--lime-300);font:700 .85rem var(--f-head);letter-spacing:.1em;text-transform:uppercase}
+.feat:hover>img.bg{transform:scale(1.06)} .feat:hover{box-shadow:var(--glow)}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none;margin:0;padding:0}
+.steps li{display:grid;gap:.5rem;padding:1.5rem;border-radius:var(--r);background:var(--surface);border:1px solid var(--line)}
+.steps img{width:128px;height:128px;object-fit:contain}
+.steps .n{font:400 .9rem var(--f-col);color:var(--royal)}
+.steps h3{font:800 1.5rem/1.05 var(--f-head);text-transform:uppercase;margin:0}
+.steps p{margin:0;color:var(--muted)}
+
+/* Seasons + leaf video band */
+.leafband{position:relative;isolation:isolate;color:#fff;overflow:hidden;background:var(--forest-950)}
+.leafband video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.leafband::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,33,15,.9),rgba(6,33,15,.4) 60%,transparent)}
+.leafband .inner{padding-block:clamp(64px,10vw,120px);max-width:560px}
+.leafband h2 em{color:#FFB25B}
+.leafband p{color:#E9EFE3}
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:1.6rem}
+.seasons figure{margin:0;position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3}
+.seasons img{width:100%;height:100%;object-fit:cover}
+.seasons figcaption{position:absolute;left:10px;bottom:10px;font:800 .85rem var(--f-head);letter-spacing:.1em;text-transform:uppercase;background:rgba(7,20,43,.78);color:#fff;padding:.3rem .6rem;border-radius:8px}
+
+/* Spec sheet parts */
+.parts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem;min-width:0}
+.panel h3{font:800 1.25rem/1 var(--f-head);letter-spacing:.06em;text-transform:uppercase;margin:0 0 1rem}
+.panel .file{font:500 .78rem ui-monospace,Menlo,monospace;color:var(--muted)}
+.stage-dark{background:var(--navy);border-radius:16px;padding:1.4rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.logos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.logos div{border-radius:14px;padding:1rem;display:grid;place-items:center;min-height:130px}
+.logos img{max-height:110px}
+.tex{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.tex figure{margin:0;display:grid;gap:.35rem}
+.tex div{aspect-ratio:1;border-radius:12px;background-size:180px 180px}
+.tex figcaption,.ill figcaption{font:500 .74rem ui-monospace,Menlo,monospace;color:var(--muted);overflow-wrap:anywhere}
+.ill{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ill figure{margin:0;display:grid;gap:.3rem;justify-items:center;background:var(--chip);border-radius:14px;padding:.8rem}
+.ill img{width:96px;height:96px;object-fit:contain}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.sw{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.sw i{display:block;height:64px}
+.sw b{display:block;padding:.5rem .6rem 0;font:700 .85rem var(--f-head);letter-spacing:.05em;text-transform:uppercase}
+.sw code{display:block;padding:0 .6rem .55rem;font:.75rem ui-monospace,Menlo,monospace;color:var(--muted)}
+
+/* Real photos */
+.photos{width:100%;border-collapse:collapse;font-size:.9rem}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.photos th{text-align:left;font:700 .75rem var(--f-head);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:.8rem 1rem;border-bottom:1px solid var(--line);white-space:nowrap}
+.photos td{padding:.65rem 1rem;border-bottom:1px solid var(--line);vertical-align:top}
+.photos tr:last-child td{border-bottom:0}
+.photos a{color:inherit;text-decoration-color:var(--lime);text-underline-offset:3px}
+.lic{display:inline-block;font:700 .72rem var(--f-head);letter-spacing:.08em;padding:.2rem .5rem;border-radius:6px;white-space:nowrap}
+.lic.free{background:#DDF1C4;color:#21460B}.lic.cred{background:#D9E5FF;color:#14307A}
+.note{margin-top:1rem;color:var(--muted);font-size:.92rem;max-width:80ch}
+
+footer{background:var(--navy);color:#B7C5DA;padding-block:36px;font-size:.9rem}
+footer .row{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+footer strong{color:#fff;font:800 1rem var(--f-head);letter-spacing:.1em;text-transform:uppercase}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .nav .links{display:none}
+  .badges ul{grid-template-columns:repeat(4,1fr)}
+  .bento{grid-template-columns:1fr 1fr}.feat:nth-child(n){grid-column:span 2;min-height:260px}
+  .steps,.parts{grid-template-columns:1fr}
+  .seasons{grid-template-columns:repeat(2,1fr)}
+  .tex{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:520px){.badges ul{grid-template-columns:repeat(3,1fr)}.ill{grid-template-columns:repeat(2,1fr)}.logos{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.hero video,.leafband video{display:none}*{transition:none!important}}
+</style>
+
+<!-- ============ LIVE PREVIEW: homepage hero ============ -->
+<div class="bar">🍂 <b>Leaf season is here</b> — free quotes on full cleanups &amp; curbside removal</div>
+<header class="hero">
+  <img class="poster" src="images/hero-1600.webp" alt="">
+  <video autoplay muted loop playsinline poster="video/hero-loop-poster.jpg" aria-hidden="true">
+    <source src="video/hero-loop.webm" type="video/webm">
+    <source src="video/hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="wrap">
+    <nav class="nav">
+      <img src="logo/logo-on-navy.svg" alt="Chesterfield Yard Care">
+      <div class="links"><span>Services</span><span>Areas</span><span>Yard Club</span><span>Reviews</span></div>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Chesterfield &amp; Midlothian, VA</span>
+        <h1>Your yard, handled. <em>Every season.</em></h1>
+        <p>Mowing, mulch, leaf cleanup, tree work and haul-away from a local crew that shows up and does it right.</p>
+        <div class="ctas">
+          <a class="btn btn-lime" href="#quote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Get my free quote</a>
+          <a class="btn btn-ghost" href="#quote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="3"/><circle cx="12" cy="12.5" r="3.2"/><path d="M8 6l1.5-2h5L16 6"/></svg>Text a photo</a>
+        </div>
+        <div class="trust"><span>★ Real Google reviews go here</span><span>Locally owned</span><span>Licensed &amp; insured · confirm</span></div>
+      </div>
+      <div class="frame" id="quote">
+        <h3>Free quote in minutes</h3>
+        <p>Three quick fields. Or text a yard photo to 804-773-8271.</p>
+        <form id="qf">
+          <label for="q-name">Name<input id="q-name" autocomplete="name" placeholder="Jordan Example"></label>
+          <label for="q-phone">Phone<input id="q-phone" inputmode="tel" placeholder="(804) 555-0142"></label>
+          <label for="q-addr">Address<input id="q-addr" placeholder="1234 Example Rd, Midlothian"></label>
+          <button class="btn btn-lime" type="submit">Get my free quote</button>
+        </form>
+        <p class="done" id="qdone" hidden>Preview only — the live site sends this straight to the owner's phone.</p>
+        <small>Demo form · nothing is sent from this page</small>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="badges wrap-section" aria-label="Services">
+  <div class="wrap">
+    <ul>
+      <li><img src="badges/badge-mowing.webp" alt=""><span>Mowing</span></li>
+      <li><img src="badges/badge-mulch-gravel.webp" alt=""><span>Mulch &amp; Gravel</span></li>
+      <li><img src="badges/badge-leaf-cleanup.webp" alt=""><span>Leaf Cleanup</span></li>
+      <li><img src="badges/badge-tree-work.webp" alt=""><span>Tree Work</span></li>
+      <li><img src="badges/badge-aeration.webp" alt=""><span>Aerating</span></li>
+      <li><img src="badges/badge-junk-removal.webp" alt=""><span>Junk Removal</span></li>
+      <li><img src="badges/badge-anything.webp" alt=""><span>Anything Your Yard Needs</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead"><span class="eyebrow">Service cards · Kie AI photography</span><h2>One crew for the <em>whole yard</em></h2>
+      <p class="lede">Each service gets its own generated photo and badge. These set the mood only; the "Our Work" gallery stays reserved for the owner's real job photos.</p></div>
+    <div class="bento">
+      <article class="feat"><img class="bg" src="images/svc-mowing-1600.webp" alt=""><img class="ic" src="badges/badge-mowing.webp" alt=""><div class="body"><h3>Mowing</h3><p>Crisp stripes, clean edges, clippings blown off every walk.</p><span class="cta">Get a quote →</span></div></article>
+      <article class="feat"><img class="bg" src="images/svc-leaf-cleanup-1600.webp" alt=""><img class="ic" src="badges/badge-leaf-cleanup.webp" alt=""><div class="body"><h3>Leaf Cleanup</h3><p>Full cleanups and curbside removal.</p><span class="cta">Get a quote →</span></div></article>
+      <article class="feat"><img class="bg" src="images/svc-mulch-gravel-1600.webp" alt=""><img class="ic" src="badges/badge-mulch-gravel.webp" alt=""><div class="body"><h3>Mulch &amp; Gravel</h3><p>Fresh beds and river rock that stays put.</p><span class="cta">Get a quote →</span></div></article>
+      <article class="feat"><img class="bg" src="images/svc-tree-work-1600.webp" alt=""><img class="ic" src="badges/badge-tree-work.webp" alt=""><div class="body"><h3>Tree Work</h3><p>Pruning, limbs and storm cleanup.</p><span class="cta">Get a quote →</span></div></article>
+      <article class="feat"><img class="bg" src="images/svc-aeration-1600.webp" alt=""><img class="ic" src="badges/badge-aeration.webp" alt=""><div class="body"><h3>Aerating</h3><p>Core aeration + overseeding for fescue.</p><span class="cta">Get a quote →</span></div></article>
+      <article class="feat"><img class="bg" src="images/svc-junk-removal-1600.webp" alt=""><img class="ic" src="badges/badge-junk-removal.webp" alt=""><div class="body"><h3>Junk Removal</h3><p>Brush, debris and old fencing hauled away.</p><span class="cta">Get a quote →</span></div></article>
+      <article class="feat"><img class="bg" src="images/svc-yard-makeovers-1600.webp" alt=""><img class="ic" src="badges/badge-anything.webp" alt=""><div class="body"><h3>Anything Your Yard Needs</h3><p>One call for the whole property.</p><span class="cta">Get a quote →</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sechead"><span class="eyebrow">How it works · clay illustrations</span><h2>Three steps to a <em>clean yard</em></h2></div>
+    <ol class="steps">
+      <li><img src="illustrations/illo-text-photo.webp" alt=""><span class="n">Step 01</span><h3>Text a photo or call</h3><p>Snap the yard and send it to 804-773-8271, or fill out three fields.</p></li>
+      <li><img src="illustrations/illo-quote.webp" alt=""><span class="n">Step 02</span><h3>Get a free quote fast</h3><p>A clear price with no pressure.</p></li>
+      <li><img src="illustrations/illo-done.webp" alt=""><span class="n">Step 03</span><h3>We handle the rest</h3><p>The crew shows up, does it right and cleans up after.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="leafband" style="padding-block:0">
+  <video autoplay muted loop playsinline poster="video/leaf-loop-poster.jpg" aria-hidden="true"><source src="video/leaf-loop.mp4" type="video/mp4"></video>
+  <div class="wrap"><div class="inner">
+    <span class="eyebrow" style="color:#FFB25B">Seasonal module · leaf video loop</span>
+    <h2>Leaves down? <em>We've got it.</em></h2>
+    <p>This band swaps by season. In November it runs the falling-leaf loop; spring, summer and winter each get their own photo below.</p>
+    <div class="ctas"><a class="btn btn-lime" href="#quote">Book a leaf cleanup</a></div>
+  </div></div>
+</section>
+<section style="padding-top:28px">
+  <div class="wrap">
+    <div class="seasons">
+      <figure><img src="images/season-spring-800.webp" alt="Spring yard with dogwoods and azaleas"><figcaption>Spring</figcaption></figure>
+      <figure><img src="images/season-summer-800.webp" alt="Summer lawn with crape myrtles"><figcaption>Summer</figcaption></figure>
+      <figure><img src="images/season-fall-800.webp" alt="Fall maples over a clean lawn"><figcaption>Fall</figcaption></figure>
+      <figure><img src="images/season-winter-800.webp" alt="Tidy winter yard"><figcaption>Winter</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEC SHEET ============ -->
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="sechead"><span class="eyebrow">The kit, part by part</span><h2>Buttons, logos <em>&amp; textures</em></h2>
+      <p class="lede">Everything below ships in the download with web sizes, transparent cutouts and a React + CSS component file that wires it together.</p></div>
+    <div class="parts">
+      <div class="panel">
+        <h3>Buttons &amp; phone pill</h3>
+        <div class="stage-dark">
+          <a class="btn btn-lime" href="#quote">Free quote</a>
+          <a class="btn btn-blue" href="#quote">See services</a>
+          <a class="btn btn-ghost" href="#quote">Text a photo</a>
+          <div class="phone"><span>804-773-8271</span><span>Text us</span></div>
+        </div>
+        <p class="file" style="margin:.8rem 0 0">ui/btn-skin-lime · ui/btn-skin-blue · components/cyc-ui.css</p>
+      </div>
+      <div class="panel">
+        <h3>Logo set (outlined SVG)</h3>
+        <div class="logos">
+          <div style="background:#F7F8F2"><img src="logo/logo-full-color.svg" alt="Full-color logo"></div>
+          <div style="background:#07142B"><img src="logo/logo-on-navy.svg" alt="Logo on navy"></div>
+          <div style="background:#0F3B1C"><img src="logo/logo-reversed-white.svg" alt="Reversed logo"></div>
+          <div style="background:#F7F8F2"><img src="logo/logo-badge.svg" alt="CYC badge icon" style="max-height:110px"></div>
+        </div>
+        <p class="file" style="margin:.8rem 0 0">Rebuilt from the flyer lockup · favicon, app icons and share image included</p>
+      </div>
+      <div class="panel">
+        <h3>Textures</h3>
+        <div class="tex">
+          <figure><div style="background-image:url(textures/texture-grass.webp)"></div><figcaption>grass stripes</figcaption></figure>
+          <figure><div style="background-image:url(textures/texture-mulch.webp)"></div><figcaption>mulch</figcaption></figure>
+          <figure><div style="background-image:url(textures/texture-gravel.webp)"></div><figcaption>river rock</figcaption></figure>
+          <figure><div style="background-image:url(textures/texture-topo.webp)"></div><figcaption>navy topo</figcaption></figure>
+          <figure><div style="background-image:url(textures/texture-leaves.webp)"></div><figcaption>fall leaves</figcaption></figure>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Spot illustrations &amp; leaf sprites</h3>
+        <div class="ill">
+          <figure><img src="illustrations/illo-calendar.webp" alt=""><figcaption>Yard Club calendar</figcaption></figure>
+          <figure><img src="illustrations/illo-map-pin.webp" alt=""><figcaption>Service area</figcaption></figure>
+          <figure><img src="illustrations/illo-leaf-pile.webp" alt=""><figcaption>Leaf season</figcaption></figure>
+          <figure><img src="ui/leaf-sprite-maple.webp" alt=""><figcaption>Falling-leaf sprite</figcaption></figure>
+          <figure><img src="ui/leaf-sprite-oak.webp" alt=""><figcaption>Falling-leaf sprite</figcaption></figure>
+          <figure><img src="ui/frame-electric.webp" alt=""><figcaption>Electric frame</figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:16px">
+      <h3>Color tokens (from the flyer)</h3>
+      <div class="swatches">
+        <div class="sw"><i style="background:#0F3B1C"></i><b>Forest</b><code>#0F3B1C</code></div>
+        <div class="sw"><i style="background:#8DC63F"></i><b>Lime</b><code>#8DC63F</code></div>
+        <div class="sw"><i style="background:#1D4ED8"></i><b>Royal</b><code>#1D4ED8</code></div>
+        <div class="sw"><i style="background:#2F7BFF"></i><b>Electric</b><code>#2F7BFF</code></div>
+        <div class="sw"><i style="background:#07142B"></i><b>Navy</b><code>#07142B</code></div>
+        <div class="sw"><i style="background:#8CC8F5"></i><b>Sky</b><code>#8CC8F5</code></div>
+        <div class="sw"><i style="background:#F5E21A"></i><b>Sun</b><code>#F5E21A</code></div>
+        <div class="sw"><i style="background:#5B3A1E"></i><b>Mulch</b><code>#5B3A1E</code></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sechead"><span class="eyebrow">Real local photos · Wikimedia Commons</span><h2>Chesterfield, <em>for real</em></h2>
+      <p class="lede">22 freely licensed photos of actual Chesterfield and Midlothian places, for town pages, the service-area section and the About story. The included script downloads and resizes them inside your project and writes a credits file.</p></div>
+    <div class="tablewrap">
+      <table class="photos">
+        <thead><tr><th>Place</th><th>Best use</th><th>License</th><th>Credit</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p class="note"><b>CC0</b> needs no credit. <b>CC BY / BY-SA</b> must show the photographer and license (the script builds a /credits list). None of these are Chesterfield Yard Care's own work, so they never go in the "Our Work" gallery.</p>
+  </div>
+</section>
+
+<footer><div class="wrap"><div class="row"><strong>Chesterfield Yard Care · Brand kit</strong><span>Powered by DataIsData</span></div></div></footer>
+
+<script>
+const photos=[
+["Swift Creek Reservoir","Brandermill / Woodlake / service-area hero","CC0","Packer1028","Swift Creek Reservoir.jpg"],
+["Swift Creek Reservoir Dam","Brandermill / Swift Creek","CC0","Packer1028","Swift Creek Reservoir Dam.jpg"],
+["Woodlake sign tower","Woodlake page hero","CC0","Packer1028","Woodlake, Virginia.jpg"],
+["Pocahontas State Park fall trail","Leaf-season section","CC BY 2.0","BenGrantham","Pocahontas State Park, VA.jpg"],
+["Beaver Lake, Pocahontas SP","Fall module background","CC BY 2.0","Virginia State Parks","PO 10-31-24 Beaver Lake.jpg"],
+["Beaver Lake Loop trail","Chesterfield Court House / Matoaca","CC BY 2.0","Virginia State Parks","PO 10-31-24 Beaver Lake Loop trail.jpg"],
+["Picnic grove in fall color","Leaf cleanup page accent","CC BY 2.0","Virginia State Parks","PO 10-31-24 picnic tables by Visitor Center.jpg"],
+["Beaver Lake bench","About page","CC BY 2.0","Virginia State Parks","PO 10-31-24 Beaver Lake - 54110748124.jpg"],
+["Beaver Lake spillway","Service-area strip","CC BY 2.0","Virginia State Parks","PO 10-28-24 Beaver Lake Spillway- view from the bottom.jpg"],
+["Beaver Lake beach","Service-area strip","CC BY 2.0","Virginia State Parks","PO 10-21-24 Beaver Lake Beach.jpg"],
+["Spillway, summer","Chesterfield Court House page","CC BY 2.0","Virginia State Parks","PO 10-15-24 Beaver Lake Spillway view from the bottom.jpg"],
+["Chesterfield Historic Courthouse","Court House town page hero","CC BY-SA 3.0","James Shelton32","Chesterfield Historic Courthouse.jpg"],
+["Smoketree entrance, Courthouse Rd","Landscaped entrance visual","CC0","Packer1028","Smoketree entrance, Courthouse Road.jpg"],
+["James River at Robious Landing","Midlothian page accent","CC BY 4.0","Zyzzybalubah","James River at Robious Landing Park, vertically-rotated - February 2025.jpg"],
+["Mid-Lothian Mines Park dam","Midlothian town page","CC0","Packer1028","Dam at Mid-Lothian Mines Park.jpg"],
+["Mid-Lothian Mines Park","Midlothian / About","CC0","Packer1028","Mid-Lothian Mines Park.jpg"],
+["Buford Oaks","Bon Air / North Chesterfield","CC0","Packer1028","Buford Oaks.jpg"],
+["Spring Grove entrance bed","Town page","CC0","Packer1028","Spring Grove (Chesterfield County, Virginia).jpg"],
+["Tarrington in fall","Midlothian page","CC0","Packer1028","Tarrington suburb Virginia.jpg"],
+["Ramsgate entrance","HOA pitch visual","CC0","Packer1028","Ramsgate neighborhood entrance, Virginia.jpg"],
+["Patromdale","Town page","CC0","Packer1028","Patromdale neighborhood.jpg"],
+["Saint James Woods","Town page / HOA section","CC0","Packer1028","Saint James Woods neighborhood, Chesterfield County.jpg"]];
+const tb=document.getElementById('rows');
+for(const [name,use,lic,by,file] of photos){
+  const tr=document.createElement('tr');
+  const url='https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(file.replace(/ /g,'_'));
+  tr.innerHTML=`<td><a href="${url}" target="_blank" rel="noopener">${name}</a></td><td>${use}</td><td><span class="lic ${lic==='CC0'?'free':'cred'}">${lic}</span></td><td>${by}</td>`;
+  tb.appendChild(tr);
+}
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();document.getElementById('qdone').hidden=false;});
+</script>
