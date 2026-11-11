@@ -1,13 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow_Condensed, Graduate, Instrument_Serif, Inter } from "next/font/google";
-import { MobileActionBar } from "@/components/brand/CycUI";
-import { SiteFooter } from "@/components/SiteFooter";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SmoothScroll } from "@/components/SmoothScroll";
 import { themeInitScript } from "@/components/ThemeToggle";
-import { Tracking } from "@/components/Tracking";
-import { JsonLd } from "@/components/sections";
-import { localBusinessSchema } from "@/lib/schema";
 import { BRAND, SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -51,16 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-lime-500 focus:px-4 focus:py-2 focus:text-forest-950">
-          Skip to content
-        </a>
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <SiteFooter />
-        <MobileActionBar />
-        <SmoothScroll />
-        <Tracking />
-        <JsonLd data={localBusinessSchema()} />
+        {children}
       </body>
     </html>
   );

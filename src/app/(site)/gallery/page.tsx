@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { CtaBand, PageHero, WorkGallery } from "@/components/sections";
 import { BRAND as B } from "@/lib/site";
 
+// Gallery reads portal photos; refresh every 5 minutes.
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: "Our Work: Before & After Yard Photos",
   description: "Real before-and-after photos of mowing, mulch, leaf cleanups and yard makeovers by Chesterfield Yard Care in Midlothian and Chesterfield County, VA.",

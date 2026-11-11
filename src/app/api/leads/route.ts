@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
   const lead: LeadRecord = {
     id: newLeadId(),
     created_at: new Date().toISOString(),
-    status: "new",
+    status: "new" as const,
     source: d.source,
     name: d.name,
     phone: formatPhone(d.phone),

@@ -23,14 +23,22 @@ export const PRICING = {
   frequencyLabel: { once: "One-time", biweekly: "Every 2 weeks", weekly: "Every week" } as Record<FreqKey, string>,
 };
 
-export function estimate(services: string[], size: SizeKey, freq: FreqKey) {
+export type Book = Record<string, { low: number; high: number; unit: string }>;
+
+/** Default (placeholder) price book in the shape the portal edits. */
+export const defaultPriceBook = (): Book =>
+  Object.fromEntries(Object.entries(PRICING.services).map(([k, v]) => [k, { low: v.base[0], high: v.base[1], unit: v.unit }]));
+
+export function estimate(services: string[], size: SizeKey, freq: FreqKey, book?: Book) {
   const lines = services
     .map((s) => {
       const p = PRICING.services[s];
       if (!p) return null;
+      const base = book?.[s] ? [book[s].low, book[s].high] : p.base;
+      const unitBase = book?.[s]?.unit ?? p.unit;
       const m = PRICING.size[size] * (p.recurring ? PRICING.frequency[freq] : 1);
       const round = (n: number) => Math.round((n * m) / 5) * 5;
-      return { slug: s, label: p.label, unit: p.recurring && freq !== "once" ? "per visit" : p.unit, low: round(p.base[0]), high: round(p.base[1]) };
+      return { slug: s, label: p.label, unit: p.recurring && freq !== "once" ? "per visit" : unitBase, low: round(base[0]), high: round(base[1]) };
     })
     .filter((x): x is NonNullable<typeof x> => !!x);
   return { lines, low: lines.reduce((a, l) => a + l.low, 0), high: lines.reduce((a, l) => a + l.high, 0) };

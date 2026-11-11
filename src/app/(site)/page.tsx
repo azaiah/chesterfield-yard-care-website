@@ -14,6 +14,9 @@ import { FAQ } from "@/content/faq";
 import { PLANS } from "@/content/yard-club";
 import { BRAND as B, SERVICES, SITE, SMS, TEL } from "@/lib/site";
 
+// Gallery reads portal photos; refresh every 5 minutes.
+export const revalidate = 300;
+
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 const HEADLINE = ["Your", "yard,"];

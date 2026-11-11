@@ -47,10 +47,12 @@ export function SiteFooter() {
           <Link className="hover:text-lime-300" href="/terms">Terms</Link>
           <Link className="hover:text-lime-300" href="/credits">Photo credits</Link>
           <Link className="hover:text-lime-300" href="/portal">Owner login</Link>
+          <Link className="hover:text-lime-300" href="/portal/demo">Demo portal</Link>
         </p>
-        {/* TODO(Phase 2): swap in the official DataIsData silver double-ring lockup file once provided. Never retype the wordmark. */}
         <p className="inline-flex items-center gap-2">
-          Powered by <Pending note="Official DataIsData lockup file not yet provided">DataIsData lockup</Pending>
+          Powered by
+          <Image src={`${BRAND}/dataisdata/dataisdata-icon.webp`} alt="" width={24} height={24} className="h-6 w-auto" />
+          <span className="font-semibold tracking-wide text-white/90">DataIsData</span>
         </p>
       </div>
     </footer>

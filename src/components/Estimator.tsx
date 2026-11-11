@@ -1,7 +1,7 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Check } from "lucide-react";
-import { estimate, PRICING, type FreqKey, type SizeKey } from "@/content/pricing";
+import { estimate, PRICING, type Book, type FreqKey, type SizeKey } from "@/content/pricing";
 import { QuickQuote } from "./QuickQuote";
 import { track } from "./Tracking";
 
@@ -12,7 +12,14 @@ export function Estimator() {
   const [size, setSize] = useState<SizeKey>("quarter");
   const [freq, setFreq] = useState<FreqKey>("weekly");
   const [locked, setLocked] = useState(false);
-  const est = useMemo(() => estimate(services, size, freq), [services, size, freq]);
+  const [book, setBook] = useState<Book | null>(null);
+  useEffect(() => {
+    fetch("/api/pricing")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j: { book: Book; custom: boolean } | null) => { if (j?.custom) setBook(j.book); })
+      .catch(() => {});
+  }, []);
+  const est = useMemo(() => estimate(services, size, freq, book ?? undefined), [services, size, freq, book]);
   const hasRecurring = services.includes("mowing");
 
   const toggle = (s: string) => setServices((cur) => (cur.includes(s) ? cur.filter((x) => x !== s) : [...cur, s]));
@@ -83,7 +90,7 @@ export function Estimator() {
               <p className="mt-3 text-white/80">Pick at least one service to see a range.</p>
             )}
             <p className="mt-4 text-sm text-white/70">
-              {PRICING.placeholder ? (
+              {PRICING.placeholder && !book ? (
                 <span className="pending !text-white">Sample ranges. Owner pricing is coming soon.</span>
               ) : null}{" "}
               Final price after a quick look at your yard. No surprises.

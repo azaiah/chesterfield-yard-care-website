@@ -8,6 +8,8 @@ import { SERVICE_CONTENT, serviceContent } from "@/content/services";
 import { serviceSchema } from "@/lib/schema";
 import { BRAND as B, SERVICES } from "@/lib/site";
 
+// Gallery reads portal photos; refresh every 5 minutes.
+export const revalidate = 300;
 export const dynamicParams = false;
 export const generateStaticParams = () => SERVICE_CONTENT.map((s) => ({ slug: s.slug }));
 

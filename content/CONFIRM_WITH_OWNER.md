@@ -37,4 +37,4 @@ When an item is confirmed, update `src/lib/site.ts` (or the portal settings in P
 - [ ] Permission to name any neighborhoods/HOAs they already serve
 
 ## DataIsData
-- [ ] Official DataIsData footer lockup file (silver double-ring "D" + wordmark). The footer shows a placeholder until it's supplied.
+- [x] DataIsData icon supplied (footer shows icon + name). Want a full wordmark lockup or a link URL? Add later.

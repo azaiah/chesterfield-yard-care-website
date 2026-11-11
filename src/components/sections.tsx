@@ -6,6 +6,7 @@ import { BEFORE_AFTER, REVIEWS, WORK_PHOTOS } from "@/content/proof";
 import { TOWNS_CONTENT } from "@/content/towns";
 import type { QA } from "@/content/services";
 import { BRAND as B, SERVICES, SITE, SMS, TEL, seasonFor } from "@/lib/site";
+import { publicWork } from "@/lib/server/portal";
 import { BeforeAfter } from "./BeforeAfter";
 import { ElectricButton, FallingLeaves, GhostButton, LimeButton, Pending } from "./brand/CycUI";
 import { HeroVideo } from "./brand/HeroVideo";
@@ -181,9 +182,28 @@ export function ReviewsBlock({ limit }: { limit?: number }) {
   );
 }
 
-export function WorkGallery({ limit }: { limit?: number }) {
-  const photos = limit ? WORK_PHOTOS.slice(0, limit) : WORK_PHOTOS;
-  if (!photos.length && !BEFORE_AFTER.length) {
+const workSrc = (key: string) => `/api/work-photo?key=${encodeURIComponent(key)}`;
+
+/** Owner's real work only: static proof.ts entries + photos marked "Show on website" in the portal. */
+export async function WorkGallery({ limit }: { limit?: number }) {
+  const portal = await publicWork();
+  const pairs = [
+    ...BEFORE_AFTER.map((p) => ({ ...p, unoptimized: false })),
+    ...portal.flatMap(({ job, photos }) => {
+      const b = photos.find((p) => p.kind === "before");
+      const a = photos.find((p) => p.kind === "after");
+      return b && a ? [{ before: workSrc(b.key), after: workSrc(a.key), alt: `${job.title} in ${job.address.split(",").slice(-1)[0]?.trim() || "Chesterfield"}`, width: a.width ?? 1600, height: a.height ?? 1200, unoptimized: true }] : [];
+    }),
+  ];
+  const paired = new Set(pairs.flatMap((p) => [p.before, p.after]));
+  const photos = [
+    ...WORK_PHOTOS.map((p) => ({ ...p, unoptimized: false })),
+    ...portal.flatMap(({ job, photos }) =>
+      photos.filter((p) => !paired.has(workSrc(p.key))).map((p) => ({ src: workSrc(p.key), alt: p.caption || job.title, width: p.width ?? 1600, height: p.height ?? 1200, unoptimized: true })),
+    ),
+  ].slice(0, limit ?? 999);
+
+  if (!photos.length && !pairs.length) {
     return (
       <div className="grid items-center gap-6 rounded-[var(--radius-xl)] border-2 border-dashed border-[var(--border)] p-8 text-center md:grid-cols-[200px_1fr] md:text-left">
         <Image src={`${B}/illustrations/illo-done.webp`} alt="" width={200} height={200} className="mx-auto" />
@@ -199,18 +219,20 @@ export function WorkGallery({ limit }: { limit?: number }) {
   }
   return (
     <div className="space-y-6">
-      {BEFORE_AFTER.length > 0 && (
+      {pairs.length > 0 && (
         <div className="grid gap-6 md:grid-cols-2">
-          {BEFORE_AFTER.slice(0, limit ?? 99).map((p) => <BeforeAfter key={p.before} {...p} />)}
+          {pairs.slice(0, limit ?? 99).map((p) => <BeforeAfter key={p.before} {...p} />)}
         </div>
       )}
-      <ul className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-        {photos.map((p) => (
-          <li key={p.src} className="mb-4 break-inside-avoid overflow-hidden rounded-2xl">
-            <Image src={p.src} alt={p.alt} width={p.width} height={p.height} sizes="(max-width:640px) 100vw, 33vw" />
-          </li>
-        ))}
-      </ul>
+      {photos.length > 0 && (
+        <ul className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+          {photos.map((p) => (
+            <li key={p.src} className="mb-4 break-inside-avoid overflow-hidden rounded-2xl">
+              <Image src={p.src} alt={p.alt} width={p.width} height={p.height} sizes="(max-width:640px) 100vw, 33vw" unoptimized={p.unoptimized} />
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

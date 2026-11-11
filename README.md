@@ -25,6 +25,15 @@ Useful pages while building: `/styleguide` (brand style tile), `/credits` (photo
 | `scripts/fetch-real-photos.mjs` | Re-downloads the local photos (`node scripts/fetch-real-photos.mjs`) |
 | `scripts/kie/generate.mjs` | Generates any *missing* Kie AI asset from `scripts/kie/assets.json` (skips existing outputs) |
 
+## Owner portal (`/portal`)
+
+- **Sign in:** `/portal/login` with `PORTAL_PASSWORD` (set `PORTAL_SESSION_SECRET` too). Session is a signed, httpOnly cookie for 14 days.
+- **Demo:** `/portal/demo` (also linked from the sign-in page and footer). Sample customers, guide cards and a 12-step tour. Nothing is saved or sent.
+- **Screens:** Today, Leads, Quotes (build → text to customer → won → schedule), Jobs (photos, "Show on website" → public gallery), Lead Sweep, Prices (feeds the website estimator), Settings (what's connected).
+- **Data:** Supabase when `NEXT_PUBLIC_SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` are set (run `supabase/migrations/*.sql`), otherwise `.data/*.json` in local dev.
+- **Monday Lead Sweep email:** `netlify/functions/lead-sweep.mts` calls `/api/cron/lead-sweep` with `CRON_SECRET`; needs `RESEND_API_KEY` + `OWNER_ALERT_EMAIL`.
+- **Low-memory build:** `BUILD_CPUS=1 npm run build`.
+
 ## Honesty rules
 - AI images are atmosphere only — never "our work". Gallery/before-after = owner's real photos only.
 - No invented reviews, ratings, years, licenses or prices. Use `<Pending>` until confirmed.

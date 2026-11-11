@@ -161,3 +161,6 @@ html.lenis, html.lenis body { height: auto; }
 .cyc-feature:hover .spot, .bento-tile:hover .spot { opacity: 1; }
 .cyc-feature .body { position: relative; z-index: 1; }
 .bento-tile { position: relative; overflow: hidden; border-radius: var(--radius-xl); border: 1px solid var(--border); background: var(--surface); padding: 1.75rem; isolation: isolate; }
+
+/* Portal tour: keep highlighted items clear of the sticky header */
+[data-tour] { scroll-margin-top: 140px; }

@@ -1,8 +1,9 @@
 import "server-only";
 import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
-import fs from "node:fs/promises";
-import path from "node:path";
 import { z } from "zod";
+import type { Lead } from "@/lib/portal/types";
+import * as db from "./db";
+import { putFile, storageMode } from "./db";
 
 // ---------- Validation ----------
 const digits = (s: string) => s.replace(/\D/g, "").replace(/^1(?=\d{10}$)/, "");
@@ -88,103 +89,28 @@ export async function verifyTurnstile(token: string | undefined, ip: string | nu
   return !!j.success;
 }
 
-// ---------- Storage: Supabase (prod) or local JSON file (dev) ----------
-export type LeadRecord = {
-  id: string;
-  created_at: string;
-  status: "new";
-  source: string;
-  name: string;
-  phone: string;
-  address: string;
-  email?: string | null;
-  services: string[];
-  plan?: string | null;
-  estimate?: unknown;
-  timing?: string | null;
-  notes?: string | null;
-  contact_pref?: string | null;
-  photos: string[];
-  utm?: unknown;
-  page?: string | null;
-};
-
-const SB_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const SB_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-export const storageMode = () =>
-  SB_URL && SB_KEY ? "supabase" : process.env.NODE_ENV !== "production" || process.env.LEADS_LOCAL === "true" ? "local" : "none";
-const LOCAL = path.join(process.cwd(), ".data");
-
-async function sb(pathname: string, init: RequestInit) {
-  const r = await fetch(`${SB_URL}${pathname}`, {
-    ...init,
-    headers: { apikey: SB_KEY!, Authorization: `Bearer ${SB_KEY}`, ...(init.headers ?? {}) },
-  });
-  if (!r.ok) throw new Error(`Supabase ${pathname} ${r.status}: ${await r.text()}`);
-  return r;
-}
-
-async function readLocal(): Promise<LeadRecord[]> {
-  try { return JSON.parse(await fs.readFile(path.join(LOCAL, "leads.json"), "utf8")); } catch { return []; }
-}
-async function writeLocal(rows: LeadRecord[]) {
-  await fs.mkdir(LOCAL, { recursive: true });
-  await fs.writeFile(path.join(LOCAL, "leads.json"), JSON.stringify(rows, null, 2));
-}
+// ---------- Storage ----------
+export type LeadRecord = Lead;
+export { storageMode } from "./db";
 
 export async function insertLead(lead: LeadRecord) {
-  const mode = storageMode();
-  if (mode === "supabase") {
-    await sb("/rest/v1/leads", { method: "POST", headers: { "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify(lead) });
-  } else if (mode === "local") {
-    const rows = await readLocal();
-    rows.push(lead);
-    await writeLocal(rows);
-  } else {
-    console.error("[leads] No database configured — lead only delivered by alert:", lead.id);
-  }
+  if (storageMode() === "none") { console.error("[leads] No database configured — lead only delivered by alert:", lead.id); return; }
+  await db.insert("leads", lead);
 }
-
-export async function getLead(id: string): Promise<LeadRecord | null> {
-  const mode = storageMode();
-  if (mode === "supabase") {
-    const r = await sb(`/rest/v1/leads?id=eq.${encodeURIComponent(id)}&select=*`, { method: "GET" });
-    return ((await r.json()) as LeadRecord[])[0] ?? null;
-  }
-  if (mode === "local") return (await readLocal()).find((l) => l.id === id) ?? null;
-  return null;
-}
-
-export async function updateLead(id: string, patch: Partial<LeadRecord>) {
-  const mode = storageMode();
-  if (mode === "supabase") {
-    await sb(`/rest/v1/leads?id=eq.${encodeURIComponent(id)}`, { method: "PATCH", headers: { "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify(patch) });
-  } else if (mode === "local") {
-    const rows = await readLocal();
-    const i = rows.findIndex((l) => l.id === id);
-    if (i >= 0) { rows[i] = { ...rows[i], ...patch }; await writeLocal(rows); }
-  }
-}
+export const getLead = (id: string) => db.get<LeadRecord>("leads", id);
+export const updateLead = (id: string, patch: Partial<LeadRecord>) => db.update<LeadRecord>("leads", id, patch);
 
 const IMAGE_TYPES: Record<string, string> = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/heic": "heic", "image/heif": "heif" };
 export const MAX_PHOTOS = 6;
 export const MAX_PHOTO_BYTES = 10 * 1024 * 1024;
 
-/** Saves a customer photo; returns a storage path (private bucket — viewed from the portal via signed URLs). */
-export async function savePhoto(leadId: string, file: File) {
+/** Saves a photo to private storage; returns its key. Portal views it through /api/portal/photos. */
+export async function savePhoto(folder: string, file: File) {
   const ext = IMAGE_TYPES[file.type];
   if (!ext) throw new Error("Only photos (JPG, PNG, WebP, HEIC) can be uploaded");
   if (file.size > MAX_PHOTO_BYTES) throw new Error("Each photo must be under 10 MB");
-  const key = `leads/${leadId}/${randomUUID()}.${ext}`;
-  const buf = Buffer.from(await file.arrayBuffer());
-  const mode = storageMode();
-  if (mode === "supabase") {
-    await sb(`/storage/v1/object/quote-uploads/${key}`, { method: "POST", headers: { "Content-Type": file.type, "x-upsert": "false" }, body: buf });
-  } else if (mode === "local") {
-    const dest = path.join(LOCAL, "uploads", key);
-    await fs.mkdir(path.dirname(dest), { recursive: true });
-    await fs.writeFile(dest, buf);
-  }
+  const key = `leads/${folder}/${randomUUID()}.${ext}`;
+  await putFile(key, Buffer.from(await file.arrayBuffer()), file.type);
   return key;
 }
 
