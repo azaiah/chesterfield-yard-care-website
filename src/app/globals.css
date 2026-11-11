@@ -143,3 +143,21 @@ html.lenis, html.lenis body { height: auto; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
+
+/* ---------- Phase 2 motion (CSS-only to keep JS small) ---------- */
+/* Headline word reveal: transform only, so text paints immediately (no LCP delay). */
+.reveal-words .w { display: inline-block; animation: word-in 0.7s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes word-in { from { transform: translateY(0.28em) rotate(1.5deg); } to { transform: none; } }
+
+/* Service-name marquee (decorative) */
+.marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee__track { display: flex; width: max-content; gap: 2.5rem; animation: marquee 38s linear infinite; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Spotlight cards: cursor-following glow (vars set by SpotlightArea) */
+.spot { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(141,198,63,.28), transparent 45%); }
+.cyc-feature:hover .spot, .bento-tile:hover .spot { opacity: 1; }
+.cyc-feature .body { position: relative; z-index: 1; }
+.bento-tile { position: relative; overflow: hidden; border-radius: var(--radius-xl); border: 1px solid var(--border); background: var(--surface); padding: 1.75rem; isolation: isolate; }

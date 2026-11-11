@@ -5,6 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { themeInitScript } from "@/components/ThemeToggle";
+import { Tracking } from "@/components/Tracking";
+import { JsonLd } from "@/components/sections";
+import { localBusinessSchema } from "@/lib/schema";
 import { BRAND, SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -27,8 +30,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE.name,
-    images: [{ url: `${BRAND}/images/og-image-1200x630.jpg`, width: 1200, height: 630 }],
+    locale: "en_US",
+    images: [{ url: `${BRAND}/images/og-image-1200x630.jpg`, width: 1200, height: 630, alt: SITE.name }],
   },
+  twitter: { card: "summary_large_image" },
   formatDetection: { telephone: false },
 };
 
@@ -54,6 +59,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteFooter />
         <MobileActionBar />
         <SmoothScroll />
+        <Tracking />
+        <JsonLd data={localBusinessSchema()} />
       </body>
     </html>
   );

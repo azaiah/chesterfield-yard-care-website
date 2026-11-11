@@ -43,3 +43,6 @@ next-env.d.ts
 
 # Kie generation state
 scripts/kie/state.json
+
+# local dev lead store
+/.data

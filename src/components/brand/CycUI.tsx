@@ -63,6 +63,7 @@ export function FeatureCard({ s, priceFrom }: { s: Service; priceFrom?: string }
   return (
     <Link className="cyc-feature" href={`/services/${s.slug}`}>
       <Image className="bg" src={`${B}/images/${s.photo}-1600.webp`} alt="" fill sizes="(max-width:768px) 100vw, 33vw" />
+      <span className="spot" aria-hidden="true" />
       <Image className="icon" src={`${B}/badges/${s.badge}.webp`} alt="" width={64} height={64} />
       <div className="body">
         <h3>{s.label}</h3>
