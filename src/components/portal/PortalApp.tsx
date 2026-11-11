@@ -136,10 +136,10 @@ export function PortalApp({ mode, initial, config, startNav }: { mode: "live" | 
       <div className="min-h-svh bg-[var(--bg)] text-[var(--fg)]">
         <div className="sticky top-0 z-50">
         {mode === "demo" && (
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 bg-sun-400 px-4 py-2 text-center text-sm font-semibold text-forest-950">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 bg-sun-400 px-4 py-0.5 text-center text-sm font-semibold text-forest-950">
             <span>Demo portal · sample customers · nothing is sent or saved</span>
-            <button className="inline-flex items-center gap-1 underline" onClick={() => setTourStep(-1)}><Compass size={14} aria-hidden /> Guides</button>
-            <Link className="underline" href="/">Back to website</Link>
+            <button className="inline-flex min-h-10 items-center gap-1 underline" onClick={() => setTourStep(-1)}><Compass size={14} aria-hidden /> Guides</button>
+            <Link className="inline-flex min-h-10 items-center underline" href="/">Back to website</Link>
           </div>
         )}
         <header className="border-b border-[var(--border)] bg-[var(--bg)]/92 backdrop-blur-md">
@@ -183,11 +183,11 @@ export function PortalApp({ mode, initial, config, startNav }: { mode: "live" | 
                 <button
                   onClick={() => go({ tab: t.id })}
                   aria-current={nav.tab === t.id ? "page" : undefined}
-                  className={`relative flex min-h-16 w-full flex-col items-center justify-center gap-0.5 text-[10px] font-bold uppercase tracking-wide ${nav.tab === t.id ? "text-royal-600" : "text-[var(--muted)]"}`}
+                  className={`relative flex min-h-16 w-full flex-col items-center justify-center gap-0.5 text-[11px] font-semibold ${nav.tab === t.id ? "text-royal-600" : "text-[var(--muted)]"}`}
                 >
                   <t.icon size={20} aria-hidden />
                   {t.label}
-                  {t.id === "leads" && newCount > 0 && <span className="absolute right-2 top-2 h-4 min-w-4 rounded-full bg-sun-400 px-1 text-[10px] leading-4 text-forest-950">{newCount}</span>}
+                  {t.id === "leads" && newCount > 0 && <span className="absolute right-2 top-2 h-4 min-w-4 rounded-full bg-sun-400 px-1 text-[11px] font-bold leading-4 text-forest-950">{newCount}</span>}
                 </button>
               </li>
             ))}

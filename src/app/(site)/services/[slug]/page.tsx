@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Check } from "lucide-react";
@@ -16,12 +17,10 @@ export const generateStaticParams = () => SERVICE_CONTENT.map((s) => ({ slug: s.
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const c = serviceContent((await params).slug);
   if (!c) return {};
-  const svc = SERVICES.find((s) => s.slug === c.slug)!;
   return {
     title: c.seoTitle,
     description: c.metaDescription,
-    alternates: { canonical: `/services/${c.slug}` },
-    openGraph: { title: c.seoTitle, description: c.metaDescription, images: [{ url: `${B}/images/${svc.photo}-1600.webp`, width: 1600, height: 900 }] },
+    ...share(`/services/${c.slug}`, { title: `${c.seoTitle} | Chesterfield Yard Care`, description: c.metaDescription }),
   };
 }
 

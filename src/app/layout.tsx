@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow_Condensed, Graduate, Instrument_Serif, Inter } from "next/font/google";
 import { themeInitScript } from "@/components/ThemeToggle";
+import { share } from "@/lib/seo";
 import { BRAND, SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -20,13 +21,7 @@ export const metadata: Metadata = {
     ],
     apple: `${BRAND}/logo/icon-180.png`,
   },
-  openGraph: {
-    type: "website",
-    siteName: SITE.name,
-    locale: "en_US",
-    images: [{ url: `${BRAND}/images/og-image-1200x630.jpg`, width: 1200, height: 630, alt: SITE.name }],
-  },
-  twitter: { card: "summary_large_image" },
+  ...share("/"),
   formatDetection: { telephone: false },
 };
 

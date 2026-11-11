@@ -21,7 +21,7 @@ export function LocalPhoto({ slug, alt, sizes = "(max-width:768px) 100vw, 50vw",
         priority={priority}
         className="h-full w-full object-cover"
       />
-      <figcaption className="absolute bottom-2 right-2 max-w-[90%] rounded-md bg-black/60 px-2 py-0.5 text-[11px] leading-snug text-white/90">
+      <figcaption className="absolute bottom-2 right-2 max-w-[90%] rounded-md bg-black/60 px-2 py-0.5 text-xs leading-snug text-white/90">
         {c.attributionRequired ? (
           <>
             Photo: {c.artist} ·{" "}

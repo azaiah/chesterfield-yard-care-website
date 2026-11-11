@@ -89,7 +89,7 @@ function QuoteEditor({ quote }: { quote: Quote }) {
 
   return (
     <div className="space-y-5">
-      <button onClick={() => go({ tab: "quotes" })} className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--link)]"><ArrowLeft size={16} aria-hidden /> All quotes</button>
+      <button onClick={() => go({ tab: "quotes" })} className="min-h-11 inline-flex items-center gap-1 text-sm font-semibold text-[var(--link)]"><ArrowLeft size={16} aria-hidden /> All quotes</button>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h1 className="h-display text-4xl md:text-5xl">Quote for {lead?.name ?? "customer"}</h1>
@@ -134,7 +134,7 @@ function QuoteEditor({ quote }: { quote: Quote }) {
           {state.priceBook && editable && (
             <div className="mt-3 flex flex-wrap gap-2">
               {SERVICES.map((s) => (
-                <button key={s.slug} className="inline-flex min-h-9 items-center gap-1 rounded-full border border-dashed border-[var(--border)] px-3 text-sm hover:border-lime-500" onClick={() => addService(s.slug)}>
+                <button key={s.slug} className="inline-flex min-h-10 items-center gap-1 rounded-full border border-dashed border-[var(--border)] px-3 text-sm hover:border-lime-500" onClick={() => addService(s.slug)}>
                   <Plus size={14} aria-hidden /> {s.label}
                 </button>
               ))}
@@ -186,7 +186,7 @@ function QuoteEditor({ quote }: { quote: Quote }) {
               <button className={`${btn.ghost} mt-2 w-full`} onClick={() => dispatch({ op: "quote.update", id: quote.id, patch: { status: "draft" } })}>Reopen</button>
             )}
           </Card>
-          {lead && <button className="text-sm font-semibold text-[var(--link)]" onClick={() => go({ tab: "leads", lead: lead.id })}>Open {lead.name}&apos;s lead →</button>}
+          {lead && <button className="min-h-11 inline-flex items-center text-sm font-semibold text-[var(--link)]" onClick={() => go({ tab: "leads", lead: lead.id })}>Open {lead.name}&apos;s lead →</button>}
         </div>
       </div>
     </div>

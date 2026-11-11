@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Terms", alternates: { canonical: "/terms" } };
+export const metadata: Metadata = { title: "Terms", ...share("/terms") };
 
 // Plain-language starter terms. Have the owner review before launch.
 export default function Terms() {

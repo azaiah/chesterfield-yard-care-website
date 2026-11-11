@@ -6,7 +6,8 @@ export const BRAND = "/media/brand";
 
 export const SITE = {
   name: "Chesterfield Yard Care",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  // Every share link, canonical and sitemap entry points here, even on deploy previews or if the env var is missing.
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://chesterfield-yard-care-website.netlify.app").replace(/\/$/, ""),
   tagline: "Local and hard-working to meet all your yard care needs.",
   phone: "804-773-8271",
   phoneE164: "+18047738271",

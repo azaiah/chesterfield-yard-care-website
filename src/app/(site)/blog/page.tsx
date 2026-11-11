@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { CtaBand, PageHero } from "@/components/sections";
@@ -9,7 +10,7 @@ import { BRAND as B } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Yard Tips for Chesterfield & Midlothian Homeowners",
   description: "Practical, local lawn and yard advice for Central Virginia: leaf season, aeration timing, mulch, mowing fescue and storm cleanup.",
-  alternates: { canonical: "/blog" },
+  ...share("/blog"),
 };
 
 export default function Blog() {

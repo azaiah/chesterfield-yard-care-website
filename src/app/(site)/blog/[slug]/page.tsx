@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { CtaBand, JsonLd, PageHero, ServiceCardsMini } from "@/components/sections";
 import { POSTS, postBySlug } from "@/content/blog";
@@ -14,8 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: p.title,
     description: p.description,
-    alternates: { canonical: `/blog/${p.slug}` },
-    openGraph: { type: "article", title: p.title, description: p.description, publishedTime: p.date, images: [{ url: `${B}/images/${p.image}-1600.webp` }] },
+    ...share(`/blog/${p.slug}`, { title: p.title, description: p.description, type: "article", publishedTime: p.date }),
   };
 }
 

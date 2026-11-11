@@ -109,7 +109,7 @@ function LeadDetail({ lead, onBack }: { lead: Lead; onBack: () => void }) {
 
   return (
     <div className="space-y-5">
-      <button onClick={onBack} className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--link)]"><ArrowLeft size={16} aria-hidden /> All leads</button>
+      <button onClick={onBack} className="min-h-11 inline-flex items-center gap-1 text-sm font-semibold text-[var(--link)]"><ArrowLeft size={16} aria-hidden /> All leads</button>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h1 className="h-display text-4xl md:text-5xl">{lead.name}</h1>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, MapPin, MessageSquareText, Phone, Zap } from "lucide-react";
@@ -17,7 +18,7 @@ import { BRAND as B, SERVICES, SITE, SMS, TEL } from "@/lib/site";
 // Gallery reads portal photos; refresh every 5 minutes.
 export const revalidate = 300;
 
-export const metadata: Metadata = { alternates: { canonical: "/" } };
+export const metadata: Metadata = { ...share("/") };
 
 const HEADLINE = ["Your", "yard,"];
 

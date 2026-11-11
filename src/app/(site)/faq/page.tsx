@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import { CtaBand, FaqList, JsonLd, PageHero } from "@/components/sections";
 import { FAQ } from "@/content/faq";
 import { SERVICE_CONTENT } from "@/content/services";
@@ -7,7 +8,7 @@ import { BRAND as B, SERVICES } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Yard Care FAQ",
   description: "Answers about quotes, scheduling, leaf season, aeration timing and service area for Chesterfield Yard Care in Midlothian and Chesterfield County, VA.",
-  alternates: { canonical: "/faq" },
+  ...share("/faq"),
 };
 
 export default function FaqPage() {

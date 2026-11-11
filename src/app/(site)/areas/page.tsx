@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -9,7 +10,7 @@ import { BRAND as B } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Service Area: Chesterfield County & Midlothian, VA",
   description: "Chesterfield Yard Care serves Midlothian, Chester, Chesterfield Court House, North Chesterfield, Moseley, Brandermill, Woodlake, Bon Air, Swift Creek, Matoaca, Ettrick and Enon.",
-  alternates: { canonical: "/areas" },
+  ...share("/areas"),
 };
 
 export default function AreasIndex() {

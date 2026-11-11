@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import { Check } from "lucide-react";
 import { Pending } from "@/components/brand/CycUI";
 import { LocalPhoto } from "@/components/LocalPhoto";
@@ -8,7 +9,7 @@ import { BRAND as B, SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Us",
   description: `${SITE.name} is a local, hard-working yard care crew based in Midlothian, serving Chesterfield County, VA.`,
-  alternates: { canonical: "/about" },
+  ...share("/about"),
 };
 
 const PROMISES = [

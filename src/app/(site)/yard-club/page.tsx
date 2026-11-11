@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import Image from "next/image";
 import { Check, Zap } from "lucide-react";
 import { Pending } from "@/components/brand/CycUI";
@@ -10,7 +11,7 @@ import { BRAND as B } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Yard Club: Seasonal Lawn Care Plans in Chesterfield, VA",
   description: "One crew, every season. Recurring yard care plans covering mowing, spring mulch, fall aeration and leaf cleanup in Midlothian and Chesterfield County.",
-  alternates: { canonical: "/yard-club" },
+  ...share("/yard-club"),
 };
 
 const CLUB_FAQ = [

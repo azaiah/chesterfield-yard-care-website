@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import { FeatureCard, HowItWorks } from "@/components/brand/CycUI";
 import { CtaBand, PageHero, SectionHeadDark } from "@/components/sections";
 import { SpotlightArea } from "@/components/SpotlightArea";
@@ -7,7 +8,7 @@ import { BRAND as B, SERVICES } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Yard Care Services in Chesterfield & Midlothian, VA",
   description: "Mowing, mulch & gravel, leaf cleanup, tree work, aeration, junk removal and full yard makeovers across Chesterfield County. Free quotes: call or text 804-773-8271.",
-  alternates: { canonical: "/services" },
+  ...share("/services"),
 };
 
 export default function ServicesIndex() {

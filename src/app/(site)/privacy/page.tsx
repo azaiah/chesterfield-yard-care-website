@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Privacy Policy", alternates: { canonical: "/privacy" } };
+export const metadata: Metadata = { title: "Privacy Policy", ...share("/privacy") };
 
 // Plain-language starter policy. Have the owner review before launch.
 export default function Privacy() {

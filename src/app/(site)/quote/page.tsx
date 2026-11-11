@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import Image from "next/image";
 import { MessageSquareText, Phone } from "lucide-react";
 import { HowItWorks } from "@/components/brand/CycUI";
@@ -8,7 +9,7 @@ import { BRAND as B, SITE, SMS, TEL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Get a Free Quote",
   description: `Free yard care quotes in Chesterfield & Midlothian, VA. Three quick fields, or text a photo to ${SITE.phone}.`,
-  alternates: { canonical: "/quote" },
+  ...share("/quote"),
 };
 
 export default function QuotePage() {

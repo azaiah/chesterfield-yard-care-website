@@ -10,24 +10,24 @@ import { ThemeToggle } from "./ThemeToggle";
 export function SiteHeader() {
   const season = seasonFor();
   return (
-    <header className="sticky top-0 z-50 [--header-h:112px]">
+    <header className="sticky top-0 z-50 [--header-h:116px]">
       <Link
         href="/quote"
-        className="block truncate bg-forest-950 px-4 py-2 text-center text-sm font-semibold text-cream-50 hover:text-lime-300"
+        className="block truncate bg-forest-950 px-4 py-3 text-center text-sm font-semibold text-cream-50 hover:text-lime-300"
       >
         {season.bar} <span className="text-lime-500" aria-hidden>→</span>
       </Link>
       <div className="border-b border-[var(--border)] bg-[var(--bg)]/92 backdrop-blur-md">
         <div className="container-x flex h-[72px] items-center justify-between gap-3">
-          <Link href="/" className="shrink-0" aria-label={`${SITE.name} — home`}>
+          <Link href="/" className="flex min-h-11 shrink-0 items-center" aria-label={`${SITE.name} — home`}>
             <Image src={`${BRAND}/logo/logo-full-color-tight.svg`} alt="" width={176} height={44} priority className="dark-hide h-8 w-auto sm:h-11" />
             <Image src={`${BRAND}/logo/logo-on-navy-tight.svg`} alt="" width={176} height={44} className="dark-show h-8 w-auto sm:h-11" />
           </Link>
-          <nav aria-label="Main" className="hidden lg:block">
+          <nav aria-label="Main" className="hidden xl:block">
             <ul className="flex items-center gap-1">
               {NAV.map((n) => (
                 <li key={n.href}>
-                  <Link href={n.href} className="rounded-full px-3 py-2 font-head text-[1.05rem] font-bold uppercase tracking-wide text-[var(--heading)] hover:text-royal-600">
+                  <Link href={n.href} className="whitespace-nowrap rounded-full px-2.5 py-2 font-head text-[1.05rem] font-bold uppercase tracking-wide text-[var(--heading)] hover:text-royal-600">
                     {n.label}
                   </Link>
                 </li>
@@ -42,7 +42,7 @@ export function SiteHeader() {
               <Phone size={16} aria-hidden /> {SITE.phone}
             </a>
             <div className="hidden md:block"><PhonePill /></div>
-            <ThemeToggle className="hidden lg:grid" />
+            <ThemeToggle className="hidden shrink-0 xl:grid" />
             <MobileMenu />
           </div>
         </div>

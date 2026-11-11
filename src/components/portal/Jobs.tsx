@@ -129,7 +129,7 @@ function JobDetail({ job }: { job: Job }) {
 
   return (
     <div className="space-y-5">
-      <button onClick={() => go({ tab: "jobs" })} className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--link)]"><ArrowLeft size={16} aria-hidden /> All jobs</button>
+      <button onClick={() => go({ tab: "jobs" })} className="min-h-11 inline-flex items-center gap-1 text-sm font-semibold text-[var(--link)]"><ArrowLeft size={16} aria-hidden /> All jobs</button>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h1 className="h-display text-4xl md:text-5xl">{job.title}</h1>

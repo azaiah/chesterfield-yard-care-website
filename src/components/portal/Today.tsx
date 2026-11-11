@@ -30,7 +30,7 @@ export function Today() {
       <section data-tour="needs-you" aria-labelledby="needs-h">
         <div className="mb-3 flex items-center justify-between">
           <h2 id="needs-h" className="h-display text-2xl">Needs you now</h2>
-          <button className="text-sm font-semibold text-[var(--link)]" onClick={() => go({ tab: "sweep" })}>Full Lead Sweep →</button>
+          <button className="min-h-11 inline-flex items-center text-sm font-semibold text-[var(--link)]" onClick={() => go({ tab: "sweep" })}>Full Lead Sweep →</button>
         </div>
         {sweep.actions.length ? (
           <ul className="space-y-2">
@@ -80,7 +80,7 @@ export function Today() {
         <section aria-labelledby="recent-h" className="min-w-0">
           <div className="mb-3 flex items-center justify-between">
             <h2 id="recent-h" className="h-display text-2xl">Latest leads</h2>
-            <button className="text-sm font-semibold text-[var(--link)]" onClick={() => go({ tab: "leads" })}>All leads →</button>
+            <button className="min-h-11 inline-flex items-center text-sm font-semibold text-[var(--link)]" onClick={() => go({ tab: "leads" })}>All leads →</button>
           </div>
           {state.leads.length ? (
             <ul className="space-y-2">

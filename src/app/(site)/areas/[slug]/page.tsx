@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { MapPin } from "lucide-react";
 import { LocalPhoto } from "@/components/LocalPhoto";
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!t) return {};
   const title = `Lawn Care & Yard Services in ${t.name}, VA`;
   const description = `Mowing, leaf cleanup, mulch, tree work, aeration and junk removal in ${t.name}, VA. Local crew, free quotes. Call or text ${SITE.phone}.`;
-  return { title, description, alternates: { canonical: `/areas/${t.slug}` }, openGraph: { title, description } };
+  return { title, description, ...share(`/areas/${t.slug}`, { title: `${title} | ${SITE.name}`, description }) };
 }
 
 const heroImage = (t: NonNullable<ReturnType<typeof townBySlug>>) =>

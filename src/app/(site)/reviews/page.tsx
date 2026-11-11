@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import { CtaBand, PageHero, ReviewsBlock } from "@/components/sections";
 import { BRAND as B } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Reviews",
   description: "What Chesterfield and Midlothian homeowners say about Chesterfield Yard Care.",
-  alternates: { canonical: "/reviews" },
+  ...share("/reviews"),
 };
 
 // Only real reviews (src/content/proof.ts). No aggregate rating schema until real ones exist.

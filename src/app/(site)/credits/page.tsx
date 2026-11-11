@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { share } from "@/lib/seo";
 import Image from "next/image";
 import { PHOTO_CREDITS } from "@/components/LocalPhoto";
 
 export const metadata: Metadata = {
   title: "Photo Credits",
   description: "Credits and licenses for the photographs of Chesterfield County and Midlothian, VA used on this site.",
-  alternates: { canonical: "/credits" },
+  ...share("/credits"),
 };
 
 export default function CreditsPage() {
