@@ -52,3 +52,6 @@ scripts/kie/state.json
 
 # raw Kie output (optimized copies live in public/media/brand)
 /public/media/generated/
+
+# videos and other client deliverables
+/deliverables
