@@ -139,6 +139,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
       "Leaves cleared from driveways, walks, patios and decks",
       "Haul-away, or tidy curbside piles where your neighborhood allows",
       "One-time cleanups or multiple visits through the fall",
+      "Leaves cleared off roofs and out of gutters",
       "Final late-season visit for oaks that drop in December",
       "Optional bed tidy-up and mulch top-dress afterward",
     ],
@@ -174,6 +175,7 @@ export const SERVICE_CONTENT: ServiceContent[] = [
       { q: "Do you take the leaves with you?", a: "We can. Haul-away is the most popular option. If your hauler or HOA takes curbside piles or bags, we can leave them ready at the curb instead." },
       { q: "Should I wait until all the leaves are down?", a: "One visit after everything drops is cheapest, but heavy layers can damage your lawn while you wait. Two visits (peak drop and after the oaks) keeps the grass healthy." },
       { q: "Can you clean leaves out of beds without blowing the mulch away?", a: "Yes. Beds are cleared by hand-raking and low-power blowing so the mulch stays put." },
+      { q: "Do you clear leaves off the roof and out of the gutters?", a: "Yes. We get leaves off roofs and out of gutters as part of a cleanup, so the next big rain drains the way it should." },
     ],
     related: ["aeration", "mulch-gravel", "junk-removal"],
     season: ["fall"],
@@ -382,6 +384,110 @@ export const SERVICE_CONTENT: ServiceContent[] = [
     ],
     related: ["mulch-gravel", "junk-removal", "mowing"],
     season: ["spring", "summer", "fall", "winter"],
+  },
+  {
+    slug: "christmas-lights",
+    h1: "Christmas light",
+    accent: "installation",
+    seoTitle: "Christmas Light Installation in Chesterfield & Midlothian, VA",
+    metaDescription:
+      "Professional Christmas light installation in Chesterfield County and Midlothian: rooflines, gutters, trees, shrubs and walkways. No ladders for you. Call or text 804-773-8271 for a free quote.",
+    intro:
+      "Skip the ladder, the tangled strands and the cold fingers. We hang your Christmas lights on the roofline, wrap the trees, light the shrubs and walkways, and make the whole yard glow. Your house, your design, lit up the way you pictured it.",
+    included: [
+      "Rooflines, gutters, peaks and windows",
+      "Tree wrapping: trunks, branches and full canopies",
+      "Shrubs, hedges and walkway lights",
+      "Your lights or ours. Tell us which when you ask for a quote",
+      "Timers set so it all turns on by itself",
+      "Clean, safe clips. No staples, no nails in your trim",
+      "Take-down after the holidays (just ask)",
+    ],
+    timing: {
+      heading: "When to book holiday lights",
+      body: [
+        "Installs usually run from early November through mid-December. The earlier you book, the better your pick of dates. Most people want everything lit by Thanksgiving weekend.",
+        "We can come back after New Year's to take it all down and pack it up for next year.",
+      ],
+    },
+    sections: [
+      {
+        h: "Your design, done right",
+        p: [
+          "Classic warm white on the roofline, colored lights in the trees, a fully wrapped oak out front. Send a photo of the house and tell us what you're picturing, and we'll quote the whole look.",
+        ],
+      },
+      {
+        h: "Safer than doing it yourself",
+        p: [
+          "Every winter people get hurt hanging lights from ladders on cold, slick roofs. Let a crew that's on ladders all year do it. We use proper clips that don't damage shingles or gutters.",
+        ],
+      },
+    ],
+    process: [
+      "Text a photo of your house and what you want lit.",
+      "Get a free quote for install (and take-down if you want it).",
+      "We hang it, set the timer, and you flip nothing.",
+    ],
+    faqs: [
+      { q: "Do I need to buy the lights?", a: "Either way works. We can install lights you already own, or quote the job with lights included." },
+      { q: "Will you take them down after the holidays?", a: "Yes. Add take-down to your quote and we'll come back after New Year's, take everything down and pack it up." },
+      { q: "Can you wrap big trees?", a: "Yes. Trunks, branches or full canopies. Send a photo and we'll quote it." },
+      { q: "When should I book?", a: "Early November is ideal. Dates fill up the closer it gets to Thanksgiving and December." },
+    ],
+    related: ["leaf-cleanup", "tree-work", "yard-makeovers"],
+    season: ["fall", "winter"],
+  },
+  {
+    slug: "sod-leveling",
+    h1: "Sod install &",
+    accent: "yard leveling",
+    seoTitle: "Sod Installation & Yard Leveling in Chesterfield, VA",
+    metaDescription:
+      "Yard leveling, grading and new sod installation in Chesterfield County and Midlothian. Fix bumps, low spots and bare yards fast. Call or text 804-773-8271 for a free quote.",
+    intro:
+      "Bumpy, patchy or bare? Seed takes a season; sod gives you a finished lawn the day we leave. We level the yard first, fixing the low spots, ruts and humps, then roll out fresh turf in tight seams so it knits together into one smooth lawn.",
+    included: [
+      "Clearing old, dead or weedy turf",
+      "Leveling and grading: low spots, ruts, humps",
+      "Topsoil where the ground needs it",
+      "Fresh sod laid in tight, staggered seams",
+      "Rolling for good root contact",
+      "Watering plan for the first few weeks",
+    ],
+    timing: {
+      heading: "Best time for new sod in Central Virginia",
+      body: [
+        "Fescue sod roots best in fall and spring, when it's cool and moist. You can lay sod in summer too, it just needs more water. Leveling and grading can happen almost any time the ground isn't frozen or soaked.",
+      ],
+    },
+    sections: [
+      {
+        h: "Why level first",
+        p: [
+          "Sod on a lumpy yard gives you a lumpy lawn. Low spots hold water and drown grass; humps get scalped by the mower. Getting the grade right first is what makes a new lawn look professional for years.",
+        ],
+      },
+      {
+        h: "Watering new sod",
+        p: [
+          "Keep it soaked for the first couple of weeks: water daily so the soil under the sod stays wet. Once it has rooted (you can't lift a corner), water deeper and less often. We'll leave you a simple schedule.",
+        ],
+      },
+    ],
+    process: [
+      "Send photos of the yard (wide shots help).",
+      "Get a quote for leveling, soil and sod.",
+      "We grade it, lay it, and leave you a watering plan.",
+    ],
+    faqs: [
+      { q: "How soon can I walk on new sod?", a: "Keep traffic light for about two weeks while it roots. After the first mow it's ready for normal use." },
+      { q: "Can you just level a few low spots?", a: "Yes. Small fixes with topsoil and seed or a few rolls of sod are common. Send a photo." },
+      { q: "Sod or seed?", a: "Seed is cheaper but takes a full season to fill in. Sod is an instant lawn. We'll tell you honestly which fits your yard and budget." },
+      { q: "What about drainage problems?", a: "Grading fixes a lot of puddling. If water needs to go somewhere specific, we'll talk through options like a gravel channel." },
+    ],
+    related: ["aeration", "mowing", "yard-makeovers"],
+    season: ["spring", "summer", "fall"],
   },
 ];
 

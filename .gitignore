@@ -46,3 +46,9 @@ scripts/kie/state.json
 
 # local dev lead store
 /.data
+
+# video production workspace
+/trailer
+
+# raw Kie output (optimized copies live in public/media/brand)
+/public/media/generated/

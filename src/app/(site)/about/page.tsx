@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 const PROMISES = [
+  "Quick, quality work done right. Every job.",
   "We show up when we say we will, and text you if weather changes the plan.",
   "Clear quotes before any work starts. No surprise add-ons.",
   "We clean up after ourselves: walks, drives and beds left tidy.",

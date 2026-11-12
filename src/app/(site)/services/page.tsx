@@ -18,7 +18,7 @@ export default function ServicesIndex() {
         eyebrow="Services"
         title="Everything your yard"
         accent="needs."
-        sub="Seven services, one local crew. Book one, or bundle a few into a single visit."
+        sub="Nine services, one local crew. Book one, or bundle a few into a single visit."
         image={`${B}/images/hero-2400.webp`}
         alt=""
         crumbs={[{ name: "Services", href: "/services" }]}

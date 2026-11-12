@@ -205,7 +205,7 @@ export default function StyleGuide() {
         </div>
       </Section>
 
-      <Section id="badges" eyebrow="06 · Service badges" title="Seven services," accent="one call" dark>
+      <Section id="badges" eyebrow="06 · Service badges" title="Nine services," accent="one call" dark>
         <ServiceBadges />
         <p className="mt-8 text-sm text-[var(--muted)]">Hover: badge lifts, tilts and its electric ring glows. Rebuilt in 3D from the flyer&apos;s seven circles.</p>
       </Section>

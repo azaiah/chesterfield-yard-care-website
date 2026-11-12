@@ -15,6 +15,8 @@ export const PRICING = {
     aeration: { label: "Aeration + Seed", base: [150, 250], unit: "per job", recurring: false },
     "junk-removal": { label: "Junk Removal", base: [150, 400], unit: "per load", recurring: false },
     "yard-makeovers": { label: "Full Cleanup", base: [400, 900], unit: "per job", recurring: false },
+    "christmas-lights": { label: "Christmas Lights", base: [300, 800], unit: "per install", recurring: false },
+    "sod-leveling": { label: "Sod & Leveling", base: [700, 1800], unit: "per job", recurring: false },
   } as Record<string, { label: string; base: [number, number]; unit: string; recurring: boolean }>,
   size: { quarter: 1, half: 1.6, acre: 2.6, more: 3.8 } as Record<SizeKey, number>,
   sizeLabel: { quarter: "¼ acre or less", half: "About ½ acre", acre: "About 1 acre", more: "More than 1 acre" } as Record<SizeKey, string>,

@@ -27,8 +27,8 @@ export const PLANS = [
 ];
 
 export const CALENDAR = [
-  { season: "spring", months: "Mar–May", image: "season-spring", items: ["Spring cleanup", "Fresh mulch & edges", "Mowing starts weekly"] },
+  { season: "spring", months: "Mar–May", image: "season-spring", items: ["Spring cleanup", "Fresh mulch & new sod", "Mowing starts weekly"] },
   { season: "summer", months: "Jun–Aug", image: "season-summer", items: ["Mowing at summer height", "Edging & trimming", "Storm cleanup on call"] },
   { season: "fall", months: "Sep–Nov", image: "season-fall", items: ["Aeration & overseeding", "Leaf cleanups", "Final mows"] },
-  { season: "winter", months: "Dec–Feb", image: "season-winter", items: ["Late oak-leaf cleanup", "Pruning & limb removal", "Junk & brush haul-away"] },
+  { season: "winter", months: "Dec–Feb", image: "season-winter", items: ["Christmas light installs", "Late oak-leaf cleanup", "Pruning & limb removal"] },
 ] as const;

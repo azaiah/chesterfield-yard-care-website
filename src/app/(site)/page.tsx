@@ -23,9 +23,10 @@ export const metadata: Metadata = { ...share("/") };
 const HEADLINE = ["Your", "yard,"];
 
 export default function Home() {
-  const [leaf, mow, mulch, tree, aerate, junk, any] = [
-    SERVICES[2], SERVICES[0], SERVICES[1], SERVICES[3], SERVICES[4], SERVICES[5], SERVICES[6],
-  ];
+  const svc = (slug: (typeof SERVICES)[number]["slug"]) => SERVICES.find((s) => s.slug === slug)!;
+  const [leaf, mow, mulch, tree, aerate, junk, lights, sod, any] = (
+    ["leaf-cleanup", "mowing", "mulch-gravel", "tree-work", "aeration", "junk-removal", "christmas-lights", "sod-leveling", "yard-makeovers"] as const
+  ).map(svc);
   return (
     <>
       {/* ---------- Hero ---------- */}
@@ -48,14 +49,14 @@ export default function Home() {
             </h1>
             <p className="mt-5 max-w-xl text-lg text-white/90 md:text-xl">
               <span className="hl-sun font-semibold">Local</span> and <span className="hl-sun font-semibold">hard-working</span>: mowing,
-              mulch, leaf cleanup, tree work, aeration and junk removal. One call, one crew.
+              leaves, mulch, sod, tree work, junk removal and Christmas lights. {SITE.motto}
             </p>
             <div className="mt-7 flex flex-wrap gap-3 lg:hidden">
               <LimeButton href="#quote">Get my free quote</LimeButton>
               <ElectricButton href={SMS} icon={<MessageSquareText aria-hidden />}>Text a photo</ElectricButton>
             </div>
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-white/90">
-              {["Free quotes", "Quote from a photo", "Locally owned"].map((t) => (
+              {["Free quotes", "Quote from a photo", "Quick, quality work"].map((t) => (
                 <li key={t} className="flex items-center gap-1.5"><Check size={16} className="text-lime-500" aria-hidden /> {t}</li>
               ))}
             </ul>
@@ -81,7 +82,7 @@ export default function Home() {
       <section aria-labelledby="svc-h" className="py-20 md:py-28">
         <div className="container-x">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHead id="svc-h" eyebrow="What we do" title="Seven services," accent="one call." sub="Everything on the flyer, done carefully. Pick one or bundle a few." />
+            <SectionHead id="svc-h" eyebrow="What we do" title="Nine services," accent="one call." sub="From the first mow of spring to the Christmas lights. Pick one or bundle a few." />
             <Link href="/services" className="inline-flex items-center gap-2 font-head text-lg font-bold uppercase tracking-wide text-[var(--link)] hover:underline">
               All services <ArrowRight size={18} aria-hidden />
             </Link>
@@ -93,6 +94,8 @@ export default function Home() {
             <FeatureCard s={tree} />
             <FeatureCard s={aerate} />
             <FeatureCard s={junk} />
+            <div className="md:col-span-2 [&>a]:h-full"><FeatureCard s={lights} /></div>
+            <FeatureCard s={sod} />
             <div className="md:col-span-3 [&>a]:min-h-[260px]"><FeatureCard s={any} /></div>
           </SpotlightArea>
         </div>

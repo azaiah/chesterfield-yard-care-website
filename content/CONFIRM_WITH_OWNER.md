@@ -4,7 +4,7 @@ Everything below is **unverified**. Until it's confirmed, the site shows it as a
 When an item is confirmed, update `src/lib/site.ts` (or the portal settings in Phase 3), then tick it here.
 
 ## Identity & credentials
-- [ ] Owner name and role. Breydon Robertson posted the flyer on Facebook (Nov 6, 2026). Is he the owner?
+- [ ] Owner name and role. Breydon Robertson posts the business's jobs and phone number on his personal Facebook (facebook.com/breydon.robertson), so very likely the owner. Confirm with him.
 - [ ] Owner bio and a real photo for /about
 - [ ] Years in business
 - [ ] Licensed? (Chesterfield County business license number)
@@ -20,7 +20,7 @@ When an item is confirmed, update `src/lib/site.ts` (or the portal settings in P
 - [ ] OK to receive website lead alerts by SMS at 804-773-8271?
 
 ## Services & area
-- [ ] Final service list and order (currently: the flyer's 7)
+- [ ] Final service list and order. Now 9: the flyer's 7, plus **Christmas light installation** and **sod & leveling**, both taken from Breydon's Facebook posts (Nov 2025 lights post; recent "leveling and turf install" post). Leaf cleanup now includes **leaves off roofs and gutters** (from his flyer photo). Confirm prices and whether take-down is offered for lights.
 - [ ] Final town list. Current draft: Midlothian, Chester, Chesterfield Court House, North Chesterfield, Moseley, Brandermill, Woodlake, Bon Air, Swift Creek, Matoaca, Ettrick, Enon
 - [ ] Anything they **don't** do (e.g. large tree removal needing climbing/crane, chemical treatments, irrigation)
 - [ ] Equipment: is the Greenworks commercial electric zero-turn on the flyer their real mower? (Only then can we claim "quiet, no gas fumes.")

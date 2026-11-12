@@ -9,6 +9,8 @@ export const SITE = {
   // Every share link, canonical and sitemap entry points here, even on deploy previews or if the env var is missing.
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://chesterfield-yard-care-website.netlify.app").replace(/\/$/, ""),
   tagline: "Local and hard-working to meet all your yard care needs.",
+  // Breydon's own words from his Facebook posts.
+  motto: "Quick, quality work done right.",
   phone: "804-773-8271",
   phoneE164: "+18047738271",
   region: "Chesterfield County & Midlothian, VA",
@@ -35,6 +37,8 @@ export const SERVICES = [
   { slug: "tree-work", label: "Tree Work", badge: "badge-tree-work", photo: "svc-tree-work", blurb: "Pruning, limb removal and storm cleanup." },
   { slug: "aeration", label: "Aerating", badge: "badge-aeration", photo: "svc-aeration", blurb: "Core aeration and overseeding for thicker fescue." },
   { slug: "junk-removal", label: "Junk Removal", badge: "badge-junk-removal", photo: "svc-junk-removal", blurb: "Brush, debris, old fencing — hauled away." },
+  { slug: "christmas-lights", label: "Christmas Lights", badge: "badge-christmas-lights", photo: "svc-christmas-lights", blurb: "Rooflines, trees and yards lit up for the holidays." },
+  { slug: "sod-leveling", label: "Sod & Leveling", badge: "badge-sod-leveling", photo: "svc-sod-leveling", blurb: "Grade it level, roll out new turf, done right." },
   { slug: "yard-makeovers", label: "Anything Your Yard Needs", badge: "badge-anything", photo: "svc-yard-makeovers", blurb: "One call for the whole property." },
 ] as const;
 
@@ -48,8 +52,9 @@ export const TOWNS = [
 /** Month-driven seasonal message (announcement bar, seasonal module). */
 export function seasonFor(date = new Date()) {
   const m = date.getMonth(); // 0 = Jan
-  if (m >= 9 && m <= 11) return { key: "fall", bar: "🍂 Leaf season is here — free quotes on full cleanups & curbside removal" } as const;
-  if (m <= 1) return { key: "winter", bar: "Winter is tree-work season — free quotes on limb removal & junk haul-away" } as const;
-  if (m <= 4) return { key: "spring", bar: "Spring cleanup & fresh mulch — book your free quote now" } as const;
-  return { key: "summer", bar: "Mowing slots open — weekly & biweekly service across Chesterfield" } as const;
+  if (m === 10 || m === 11) return { key: "holiday", bar: "🎄 Booking Christmas light installs + leaf cleanups now. Free quotes" } as const;
+  if (m === 9) return { key: "fall", bar: "🍂 Leaf season is here. Free quotes on full cleanups & curbside removal" } as const;
+  if (m <= 1) return { key: "winter", bar: "Winter is tree-work season. Free quotes on limb removal & junk haul-away" } as const;
+  if (m <= 4) return { key: "spring", bar: "Spring cleanup, fresh mulch & new sod. Book your free quote now" } as const;
+  return { key: "summer", bar: "Mowing slots open. Weekly & biweekly service across Chesterfield" } as const;
 }
