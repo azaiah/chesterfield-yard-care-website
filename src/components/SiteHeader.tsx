@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { LayoutDashboard, Phone } from "lucide-react";
 import { BRAND, SITE, TEL, seasonFor } from "@/lib/site";
 import { PhonePill } from "./brand/CycUI";
 import { NAV } from "@/lib/nav";
@@ -42,6 +42,14 @@ export function SiteHeader() {
               <Phone size={16} aria-hidden /> {SITE.phone}
             </a>
             <div className="hidden md:block"><PhonePill /></div>
+            <Link
+              href="/portal"
+              aria-label="Owner portal"
+              title="Owner portal"
+              className="hidden h-11 shrink-0 items-center gap-2 rounded-full border border-[var(--border)] px-3 font-head text-[1.05rem] font-bold uppercase tracking-wide text-[var(--heading)] transition hover:border-lime-500 md:inline-flex"
+            >
+              <LayoutDashboard size={18} aria-hidden /> <span className="hidden 2xl:inline">Portal</span>
+            </Link>
             <ThemeToggle className="hidden shrink-0 xl:grid" />
             <MobileMenu />
           </div>
